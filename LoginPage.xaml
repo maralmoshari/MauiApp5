@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.LoginPage"
+             Title="LoginPage"
+             BackgroundColor="White">
+    <StackLayout>
+        <Image
+            Source="Resources/Images/account.png"
+            WidthRequest="150"
+            Margin="0, 20, 0, 60"/>
+        <Frame
+            BorderColor="White"
+            BackgroundColor="#FFCCE5"
+            WidthRequest="300"
+            CornerRadius="20">
+            <Entry
+                x:Name="userNameEntry"
+                Placeholder="User Name"
+                PlaceholderColor="#000000"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                />
+        </Frame>
+        <Frame
+            BorderColor="White"
+            Margin="0, 15, 0, 0"
+            BackgroundColor="#FFCCE5"
+            WidthRequest="300"
+            CornerRadius="20">
+            <Entry
+                x:Name="passwordEntry"
+                Placeholder="Password"
+                PlaceholderColor="#000000"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                IsPassword="True"/>
+        </Frame>
+        <Button
+            BackgroundColor="Gray"
+            WidthRequest="30"
+            HeightRequest="30"
+            CornerRadius="40"
+            Margin="0, 0, 30, 0"
+            HorizontalOptions="End"
+            
+            ImageSource="Resources\Images\View.png"
+            
+            Clicked="PasswordShow"/>
+
+
+        <Button
+            BackgroundColor="#FF66B2"
+            Margin="0, 220, 0, 0"
+            WidthRequest="300"
+            HeightRequest="50"
+            CornerRadius="50"
+            Text="Login"
+            TextColor="Black"
+            FontSize="20"
+            FontAttributes="Bold, Italic"
+            Clicked="LoginButton"/>
+
+        <Button
+            Margin="0, 0, 0, 0"
+            BackgroundColor="white"
+            Text="Forgot Password"
+            TextColor="Black"
+            />
+    </StackLayout>
+</ContentPage>

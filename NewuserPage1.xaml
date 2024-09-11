@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.NewuserPage1"
+             Title="NewuserPage">
+    <ScrollView>
+        <StackLayout>
+
+            <Image
+            Source="Resources/Images/teck.png"
+            WidthRequest="30"
+            HeightRequest="30"
+            HorizontalOptions="EndAndExpand"
+            Margin="0,-40,0,40">
+
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AddNewUser"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+
+            <Frame
+                BorderColor="White"
+                Background="#FFCCE5"
+                WidthRequest="300"
+                HeightRequest="100"
+                CornerRadius="40"
+                Margin="0,20,0,5">
+            <Entry
+             x:Name="NewUserName"
+             Placeholder=" Name"
+             PlaceholderColor="#FFFFFF"
+             FontSize="30"
+             HorizontalTextAlignment="Center"
+                />
+        </Frame>
+        <Frame
+            BorderColor="White"
+            Background="#FFCCFF"
+            WidthRequest="300"
+            HeightRequest="100"
+            CornerRadius="40">
+            <Entry
+                 x:Name="JobPosition"
+                 Placeholder=" Job Position"
+                 PlaceholderColor="#FFFFFF"
+                 FontSize="30"
+                 HorizontalTextAlignment="Center"
+                    />
+        </Frame>
+
+        <Button
+        Text="Domain"
+        BackgroundColor="#E5CCFF"
+        TextColor="White"
+        FontSize="30"
+        CornerRadius="40"
+        WidthRequest="300"
+        HeightRequest="100"
+        Margin="0, 5, 0, 5"
+        Clicked="ChooseDomain"/>
+
+        <Frame
+            BorderColor="White"
+            Background="#CCCCFF"
+            WidthRequest="300"
+            HeightRequest="100"
+            CornerRadius="40">
+            <Entry
+                 x:Name="password"
+                 Placeholder=" password"
+                 PlaceholderColor="#FFFFFF"
+                 FontSize="30"
+                 HorizontalTextAlignment="Center"
+                    />
+        </Frame>
+
+        <Frame
+            BorderColor="White"
+            Background="#CCE5FF"
+            WidthRequest="300"
+            HeightRequest="100"
+            CornerRadius="40" 
+            Margin="0,5,0,5">
+            <Entry
+                 x:Name="PhoneNumber"
+                 Placeholder=" Phone Number"
+                 PlaceholderColor="#FFFFFF"
+                 FontSize="30"
+                 HorizontalTextAlignment="Center"
+                    />
+        </Frame>
+        <Frame
+            BorderColor="White"
+            BackgroundColor="#CCFFFF"
+            WidthRequest="300"
+            HeightRequest="100"
+            CornerRadius="40">
+            <Entry
+                x:Name="UserDescription"
+                Placeholder=" User Description"
+                PlaceholderColor="#FFFFFF"
+                FontSize="30"
+                HorizontalTextAlignment="Center"
+            />
+        </Frame>
+
+
+        <Button
+            Text="Group"
+            BackgroundColor="#CCFFE5"
+            TextColor="White"
+            FontSize="30"
+            CornerRadius="40"
+            WidthRequest="300"
+            HeightRequest="100"
+            Margin="0, 5, 0, 0"
+            Clicked="ChooseGroup"/>
+
+
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

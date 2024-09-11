@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.NewtaskPage"
+             Title="New Task Page"
+             >
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+        <Frame
+             BorderColor="White"
+             Background="#FFCCE5"
+             WidthRequest="180"
+             HeightRequest="100"
+            
+             CornerRadius="20">
+            <Entry
+                  x:Name="NameEntry"
+                  Placeholder=" Name"
+                  PlaceholderColor="#FFFFFF"
+                  FontSize="20"
+                  HorizontalTextAlignment="Center"/>
+        </Frame>
+
+        <Frame Grid.Row="1"
+               Grid.Column="0"
+               Margin="0,0,0,80"
+             BorderColor="White"
+             Background="#FFCCE5"
+             WidthRequest="180"
+              HeightRequest="100"
+             CornerRadius="20">
+            <Entry
+                  x:Name="DescraptionEntry"
+                  Placeholder="Descraption"
+                  PlaceholderColor="#FFFFFF"
+                  FontSize="20"
+                  HorizontalTextAlignment="Center"/>
+
+        </Frame>
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="a sing to person"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="20"
+            WidthRequest="180"
+            HeightRequest="100"
+            Margin="0, 0, 0, 160"
+            Clicked="ChooseUser"/>
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Manager"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="20"
+            WidthRequest="180"
+            HeightRequest="100"
+            Margin="0, 0, 0, 235"
+            Clicked="ChooseManager"/>
+        <Frame
+             Grid.Row="4"
+             Grid.Column="0"
+             BorderColor="White"
+             Background="#FFCCE5"
+             WidthRequest="180"
+             HeightRequest="100"
+             Margin="0,0,0,310"
+             CornerRadius="20">
+            <Entry
+                  x:Name="CostEntry"
+                  Placeholder=" Cost "
+                  PlaceholderColor="#FFFFFF"
+                  FontSize="20"
+                  HorizontalTextAlignment="Center"/>
+        </Frame>
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Deadline"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="20"
+            WidthRequest="180"
+            HeightRequest="100"
+            Margin="10, -300, 0, 0"
+            Clicked="ChooseDeadline"/>
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="Prerequisite"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="20"
+            WidthRequest="180"
+            HeightRequest="100"
+            Margin="10, -380, 0, 0"
+            Clicked="ChoosePrerequisite"/>
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="pre/nexr task"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="20"
+            WidthRequest="180"
+            HeightRequest="100"
+            Margin="10, -460, 0, 0"
+            Clicked="ChooseTask"/>
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="Couple Task"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="20"
+            WidthRequest="180"
+            HeightRequest="100"
+            Margin="10, -540, 0, 0"
+            Clicked="ChooseCouple"/>
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            Text="Priority"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="20"
+            WidthRequest="180"
+            HeightRequest="100"
+            Margin="10, -315, 0, 0"
+            Clicked="ChoosePriority"/>
+
+        <Image
+            Grid.Row="6"
+            
+         
+            Source="Resources/Images/teck.png"
+            WidthRequest="30"
+            HeightRequest="30"
+            HorizontalOptions="CenterAndExpand"
+            Margin="0,-40,0,40">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="AddNewTask"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+
+
+
+    </Grid>
+</ContentPage>

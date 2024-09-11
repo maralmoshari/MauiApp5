@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.SmsPage"
+             Title="SmsPage"
+             BackgroundColor="White">
+    <StackLayout>
+        <Label
+            Text="Enter your code"
+            FontAttributes="Bold"
+            FontSize="20"
+            HorizontalOptions="Center"
+            TextColor="#3399FF"
+            Margin="0, 30, 0, 15"/>
+        <Frame
+            WidthRequest="330"
+            CornerRadius="20"
+            BackgroundColor="#CCE5FF"
+            BorderColor="White">
+            <Entry
+                x:Name="smsintry"
+                HorizontalTextAlignment="Center"
+                Keyboard="Numeric"
+                FontSize="40"
+                MaxLength="5"
+                Placeholder="SMS Code"
+                PlaceholderColor="#99CCFF"/>
+        </Frame>
+        <Label
+            x:Name="timerLabel"
+            Text="3:00"
+            TextColor="#E0E0E0"
+            HorizontalOptions="Center"
+            Margin="0, 5, 0, 0"
+            
+            FontSize="30"/>
+        <Button
+            Text="Done"
+            BackgroundColor="#CCE5FF"
+            TextColor="#99CCFF"
+            FontSize="30"
+            CornerRadius="50"
+            WidthRequest="120"
+            HeightRequest="60"
+            Margin="0, 30, 0, 20"
+            Clicked="DoneButton"/>
+
+
+
+    </StackLayout>
+</ContentPage>

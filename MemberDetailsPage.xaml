@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.MemberDetailsPage"
+             Title="Member Details">
+
+     <StackLayout>
+            <Image
+            Source="{Binding ImageSource}"
+            Aspect="AspectFit" HeightRequest="200" HorizontalOptions="Center"
+            Margin="0, 20, 0, 60"/>
+            <Button 
+                 BackgroundColor="#FFCCE5" 
+                 FontSize="50" 
+                 CornerRadius="10" 
+                 WidthRequest="50" 
+                 HeightRequest="50" 
+                 Margin="30, -100, -245, 20" 
+                 Clicked="ProfileButton" 
+                 ImageSource="Resources/Images/account.png"/>
+
+
+
+        <Frame
+             BorderColor="White"
+             BackgroundColor="#FFCCE5"
+             WidthRequest="350"
+             CornerRadius="20">
+                <Label Text="{Binding Username}" FontSize="24" HorizontalOptions="Center" />
+
+
+            </Frame>
+
+
+            <Frame
+                 BorderColor="White"
+                 BackgroundColor="#FFCCE5"
+                 WidthRequest="350"
+                 CornerRadius="20">
+                <Label Text="{Binding JobTitle}" FontSize="24"  HorizontalOptions="Center" />
+
+
+            </Frame>
+
+            <Frame
+                     BorderColor="White"
+                     BackgroundColor="#FFCCE5"
+                     WidthRequest="350"
+                     CornerRadius="20">
+                    <Label Text="{Binding PhoneNumber}" FontSize="24"  HorizontalOptions="Center" />
+
+
+            </Frame>
+            <Frame
+                         BorderColor="White"
+                         BackgroundColor="#FFCCE5"
+                         WidthRequest="350"
+                         CornerRadius="20">
+                <Label Text="{Binding Description}" FontSize="24"  HorizontalOptions="Center" />
+
+
+            </Frame>
+        </StackLayout>
+
+
+
+     </ContentPage>
+
+
+
