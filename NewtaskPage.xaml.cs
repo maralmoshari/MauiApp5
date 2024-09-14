@@ -22,22 +22,23 @@ public partial class NewtaskPage : ContentPage
     }
     private void ChooseDeadline(object sender, EventArgs e)
     {
-        
 
+        var popup = new DeadlinePopup();
+        this.ShowPopup(popup);
     }
     private void ChoosePrerequisite(object sender, EventArgs e)
     {
 
 
     }
-    private void ChooseTask(object sender, EventArgs e)
+    private void ChooseNextTask(object sender, EventArgs e)
     {
-
+        this.ShowPopup(new TaskPopup());
 
     }
     private void ChooseCouple(object sender, EventArgs e)
     {
-
+        this.ShowPopup(new TaskPopup());
 
     }
     private void ChoosePriority(object sender, EventArgs e)
@@ -45,6 +46,12 @@ public partial class NewtaskPage : ContentPage
 
 
     }
+    private void Choosecreatedby(object sender, EventArgs e)
+    {
+
+
+    }
+    
     private void AddNewTask(object sender, EventArgs e)
     {
         Navigation.PopAsync();

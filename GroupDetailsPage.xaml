@@ -12,7 +12,6 @@
                     <RowDefinition Height="50"   />
                     <RowDefinition Height="100" />
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" TextColor="Black">mmdmmmmmmmmmmmmm</Label>
                 <CollectionView ItemsSource="{Binding Tasks}"
                         HeightRequest="400"
                         Grid.Row="1" Margin="0,180,0,0">

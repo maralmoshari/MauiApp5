@@ -4,8 +4,6 @@ using Microsoft.Maui.Controls;
 
 public partial class GroupPage : ContentPage
 {
-    
-    
 
     public ObservableCollection<Group> Groups { get; set; } // Using ObservableCollection for automatic updates
 
@@ -17,8 +15,8 @@ public partial class GroupPage : ContentPage
 
         string Fgroupname = "group1";
         string FDescription = "This is a description.";
-      
-        
+
+
 
         for (int i = 0; i < 20; i++)
         {
@@ -39,12 +37,9 @@ public partial class GroupPage : ContentPage
             ((CollectionView)sender).SelectedItem = null;
         }
     }
-
-
     private void Addnewgroup(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new NewGroupPage()) ;
+    {
+        Navigation.PushAsync(new NewGroupPage());
 
-        }
-    
+    }
 }

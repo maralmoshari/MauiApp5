@@ -8,9 +8,8 @@ public partial class UserPopup : Popup
     public ObservableCollection<Member> Members { get; set; }
 
     public UserPopup()
-	{
-		InitializeComponent();
-
+    {
+        InitializeComponent();
         Members = new ObservableCollection<Member>();
 
         string FUsername = "User1";
@@ -26,16 +25,15 @@ public partial class UserPopup : Popup
 
         BindingContext = this;
     }
-
-   /* private async void OnMemberSelected(object sender, SelectionChangedEventArgs e)
+    private async void OnMemberSelected(object sender, SelectionChangedEventArgs e)
     {
-        var selectedMember = e.CurrentSelection.FirstOrDefault() as Member;
-        if (selectedMember != null)
-        {
-            await Navigation.PushAsync(new MemberDetailsPage(selectedMember));
-            // Reset selection to avoid re-triggering the same item
-            ((CollectionView)sender).SelectedItem = null;
-        }
-    }*/
-
+       // var selectedMember = e.CurrentSelection.FirstOrDefault() as Member;
+       // if (selectedMember != null)
+       // {
+       //     //await Navigation.PushAsync(new MemberDetailsPage(selectedMember));
+       //     
+       //     // Reset selection to avoid re-triggering the same item
+       //     ((CollectionView)sender).SelectedItem = null;
+       // }
+    }
 }

@@ -51,13 +51,14 @@
 
         <Button
             BackgroundColor="#FF66B2"
-            Margin="0, 220, 0, 0"
+            Margin="0, 50, 0, 0"
             WidthRequest="300"
             HeightRequest="50"
             CornerRadius="50"
             Text="Login"
             TextColor="Black"
             FontSize="20"
+
             FontAttributes="Bold, Italic"
             Clicked="LoginButton"/>
 

@@ -11,12 +11,14 @@ public partial class NewuserPage1 : ContentPage
 
     private void ChooseGroup(object sender, EventArgs e)
     {
-        var popup = new GroupPopup();
-        this.ShowPopup(popup);
+       // var popup = new GroupsPopup();
+        //this.ShowPopup(popup);
 
     }
     private void ChooseDomain(object sender, EventArgs e)
     {
+         var popup = new DomainPopup();
+        this.ShowPopup(popup);
 
     }
     private void AddNewUser(object sender , EventArgs e)

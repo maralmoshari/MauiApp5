@@ -13,12 +13,13 @@
                         HeightRequest="400"
                         Grid.Row="0"
                         SelectionMode="Single"
-                        SelectionChanged="OnMemberSelected">
+                        SelectionChanged="OnMemberSelected" >
             
             <CollectionView.ItemTemplate >
-                <DataTemplate>
+                <DataTemplate >
+                    <Frame Padding="10" BackgroundColor="#ffcce5" Margin="5" BorderColor="#ffcce5">
 
-                        <Grid Padding="10">
+                        <Grid Padding="10" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -27,6 +28,7 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
+                            
                         <Image Grid.RowSpan="2"
                                BackgroundColor="White"
                                Source="{Binding ImageSource}"
@@ -36,7 +38,8 @@
                         <Label Grid.Column="1"
                                TextColor="Black"
                                Text="{Binding Username}"
-                               FontAttributes="Bold" />
+                               FontAttributes="Bold"
+                               />
                         <Label Grid.Row="1"
                                Grid.Column="1"
                                TextColor="Black"
@@ -44,7 +47,8 @@
                                FontAttributes="Italic"
                                VerticalOptions="End" />
                     </Grid>
-                   
+                    </Frame>
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

@@ -12,6 +12,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -125,7 +126,7 @@
             WidthRequest="180"
             HeightRequest="100"
             Margin="10, -460, 0, 0"
-            Clicked="ChooseTask"/>
+            Clicked="ChooseNextTask"/>
         <Button
             Grid.Row="4"
             Grid.Column="1"
@@ -150,10 +151,22 @@
             HeightRequest="100"
             Margin="10, -315, 0, 0"
             Clicked="ChoosePriority"/>
+        <Button
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="Priority"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="20"
+            WidthRequest="180"
+            HeightRequest="100"
+            Margin="10, -315, 0, 0"
+            Clicked="Choosecreatedby"/>
 
         <Image
             Grid.Row="6"
-            
+            Grid.Column="1"
          
             Source="Resources/Images/teck.png"
             WidthRequest="30"

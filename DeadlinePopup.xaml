@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="MauiApp5.DeadlinePopup"
+               xmlns:controls="clr-namespace:Plugin.Maui.Calendar.Controls;assembly=Plugin.Maui.Calendar" >
+
+    <StackLayout>
+        <controls:Calendar
+        Day="14"
+        Month="5"
+        Year="2024"
+        VerticalOptions="Fill"
+        HorizontalOptions="Fill"/>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="0"
+                   Grid.Column="0"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   CornerRadius="40"
+                   BorderColor="Black">
+            <Entry Placeholder="Hour" 
+                   WidthRequest="40"
+                   HeightRequest="40"/>
+            </Frame>
+            <Label Grid.Row="0"
+                   Grid.Column="1" FontSize="40">:</Label>
+            <Frame Grid.Row="0"
+                   Grid.Column="2"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   CornerRadius="40"
+                   BorderColor="Black"
+                   Margin="0,0,150,0"
+                   >
+                <Entry Placeholder="Min" 
+                   WidthRequest="40"
+                   HeightRequest="40" />
+            </Frame>
+        </Grid>
+
+
+        <Image
+            Grid.Row="6"
+            Grid.Column="1"
+         
+            Source="Resources/Images/teck.png"
+            WidthRequest="30"
+            HeightRequest="30"
+            HorizontalOptions="EndAndExpand"
+            Margin="0,10,5,5">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="AcceptTime"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+
+
+
+
+
+
+
+
+    </StackLayout>
+    
+</toolkit:Popup>
