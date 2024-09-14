@@ -118,7 +118,7 @@
         <Button
             Grid.Row="3"
             Grid.Column="1"
-            Text="pre/nexr task"
+            Text="Next Task"
             BackgroundColor="#FFCCE5"
             TextColor="White"
             FontSize="20"
@@ -154,7 +154,7 @@
         <Button
             Grid.Row="6"
             Grid.Column="0"
-            Text="Priority"
+            Text="Created By"
             BackgroundColor="#FFCCE5"
             TextColor="White"
             FontSize="20"
@@ -163,6 +163,18 @@
             HeightRequest="100"
             Margin="10, -315, 0, 0"
             Clicked="Choosecreatedby"/>
+        <Button
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="Previous Task"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="20"
+            WidthRequest="180"
+            HeightRequest="100"
+            Margin="10, 0, 0, 80"
+            Clicked="ChoosePreTask"/>
 
         <Image
             Grid.Row="6"

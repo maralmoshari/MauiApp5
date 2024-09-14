@@ -6,18 +6,7 @@ namespace MauiApp5;
 public partial class TaskPopup : Popup
 {
 
-    public class Task
-    {
-        public string Title { get; set; }
-        public string Description { get; set; }
 
-        public Task(string title, string description)
-        {
-            Title = title;
-            Description = description;
-
-        }
-    }
 
     public ObservableCollection<Task> Tasks { get; set; } // Using ObservableCollection for automatic updates
 

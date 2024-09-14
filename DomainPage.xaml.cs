@@ -37,11 +37,16 @@ public partial class DomainPage : ContentPage
 
         BindingContext = this;
 
-        CollectionView collectionView = new CollectionView();
-        collectionView.SetBinding(ItemsView.ItemsSourceProperty, nameof(Domains));
-
-
-
+    }
+    private async void OnDomainSelect(object sender, SelectionChangedEventArgs e)
+    {
+      //  var SelectedDomain = e.CurrentSelection.FirstOrDefault() as Domain;
+      //  if (SelectedDomain != null)
+      //  {
+      //      await Navigation.PushAsync(new DomainsSubPage(SelectedDomain));
+      //      // Reset selection to avoid re-triggering the same item
+      //      ((CollectionView)sender).SelectedItem = null;
+      //  }
     }
 
 

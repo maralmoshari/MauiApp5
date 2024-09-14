@@ -10,6 +10,9 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <CollectionView ItemsSource="{Binding Tasks}"
+                        SelectedItem="{Binding SelectedTask}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnTaskSelected"
                         HeightRequest="400"
                         Grid.Row="0">
             <CollectionView.ItemTemplate >

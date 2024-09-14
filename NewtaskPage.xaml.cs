@@ -36,6 +36,7 @@ public partial class NewtaskPage : ContentPage
         this.ShowPopup(new TaskPopup());
 
     }
+
     private void ChooseCouple(object sender, EventArgs e)
     {
         this.ShowPopup(new TaskPopup());
@@ -43,15 +44,23 @@ public partial class NewtaskPage : ContentPage
     }
     private void ChoosePriority(object sender, EventArgs e)
     {
-
+        var popup = new PriorityPopup();
+        this.ShowPopup(popup);
 
     }
     private void Choosecreatedby(object sender, EventArgs e)
     {
+        var popup = new UserPopup();
+        this.ShowPopup(popup);
 
 
     }
-    
+    private void ChoosePreTask(object sender, EventArgs e)
+    {
+        this.ShowPopup(new TaskPopup());
+
+    }
+
     private void AddNewTask(object sender, EventArgs e)
     {
         Navigation.PopAsync();

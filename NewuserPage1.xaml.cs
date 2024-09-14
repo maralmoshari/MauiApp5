@@ -11,8 +11,8 @@ public partial class NewuserPage1 : ContentPage
 
     private void ChooseGroup(object sender, EventArgs e)
     {
-       // var popup = new GroupsPopup();
-        //this.ShowPopup(popup);
+       var popup = new GroupPopupPage();
+        this.ShowPopup(popup);
 
     }
     private void ChooseDomain(object sender, EventArgs e)

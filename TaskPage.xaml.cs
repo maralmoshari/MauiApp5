@@ -5,18 +5,7 @@ namespace MauiApp5;
 public partial class TaskPage : ContentPage
 {
 
-        public class Task
-        {
-            public string Title { get; set; }
-            public string Description { get; set; }
 
-            public Task(string title, string description)
-            {
-                Title = title;
-                Description = description;
-
-            }
-        }
 
         public ObservableCollection<Task> Tasks { get; set; } // Using ObservableCollection for automatic updates
 
@@ -28,6 +17,7 @@ public partial class TaskPage : ContentPage
 
             string Ftitle = "task 1";
             string FDescription = "This is a description.";
+            
 
 
             for (int i = 0; i < 20; i++)
@@ -44,7 +34,17 @@ public partial class TaskPage : ContentPage
 
 
         }
-        private void Addnewtask(object sender, EventArgs e)
+    private async void OnTaskSelected(object sender, SelectionChangedEventArgs e)
+    {
+     //  var SelectedTask = e.CurrentSelection.FirstOrDefault() as Task;
+     //  if (SelectedTask != null)
+     //  {
+     //      await Navigation.PushAsync(new TaskDeatailsPage(SelectedTask));
+     //      // Reset selection to avoid re-triggering the same item
+     //      ((CollectionView)sender).SelectedItem = null;
+     //  }
+    }
+    private void Addnewtask(object sender, EventArgs e)
         {
             Navigation.PushAsync(new NewtaskPage());
 

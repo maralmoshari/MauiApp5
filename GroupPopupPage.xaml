@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp5.DomainPage"
-             Title="DomainPage">
-
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="MauiApp5.GroupPopupPage">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -11,12 +9,12 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <CollectionView ItemsSource="{Binding Domains}"
-                        SelectedItem="{Binding SelectedDomain}"
-                        SelectionMode="Single"
-                        SelectionChanged="OnDomainSelect"
+        <CollectionView ItemsSource="{Binding Groups}"
+                        SelectedItem="{Binding SelectedGroup}"
                         HeightRequest="400"
-                        Grid.Row="0">
+                        Grid.Row="0"
+                        SelectionMode="Multiple"
+                        SelectionChanged="OnGroupSelected">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10"
@@ -29,10 +27,10 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                      
+
                         <Label Grid.Column="1"
                            TextColor="Black"
-                           Text="{Binding Title}"
+                           Text="{Binding Groupname}"
                            FontAttributes="Bold" />
                         <Label Grid.Row="1"
                            Grid.Column="1"
@@ -44,6 +42,23 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Image
+            Grid.Row="6"
+            Grid.Column="1"
+         
+            Source="Resources/Images/teck.png"
+            WidthRequest="30"
+            HeightRequest="30"
+            HorizontalOptions="CenterAndExpand"
+            Margin="0,-40,0,40">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ChooseGroup"/>
+            </Image.GestureRecognizers>
+        </Image>
+
 
     </Grid>
-</ContentPage>
+
+
+</toolkit:Popup>

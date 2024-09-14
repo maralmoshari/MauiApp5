@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.ProfilePage"
+             Title="ProfilePage">
+
+        <StackLayout>
+            <Image
+            Source="Resources/Images/account.png"
+            WidthRequest="150"
+            Margin="0, 20, 0, 60"/>
+            <Frame
+            BorderColor="White"
+            BackgroundColor="#FFCCE5"
+            WidthRequest="300"
+            CornerRadius="20">
+                <Entry
+                x:Name="FirstnameEntry"
+                Placeholder="first Name"
+                PlaceholderColor="#000000"
+                FontSize="20"
+                HorizontalTextAlignment="Center"/>
+            </Frame>
+            <Frame
+            BorderColor="White"
+            BackgroundColor="#FFCCE5"
+            WidthRequest="300"
+            CornerRadius="20">
+                <Entry
+                    x:Name="LastnameEntry"
+                    Placeholder="last Name"
+                    PlaceholderColor="#000000"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"/>
+            </Frame>
+            <Frame
+            BorderColor="White"
+            BackgroundColor="#FFCCE5"
+            WidthRequest="300"
+            CornerRadius="20">
+                <Entry
+                    x:Name="PasswordEntry"
+                    Placeholder="password"
+                    PlaceholderColor="#000000"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"/>
+            </Frame>
+            <Frame
+            BorderColor="White"
+            BackgroundColor="#FFCCE5"
+            WidthRequest="300"
+            CornerRadius="20">
+                <Entry
+                x:Name="NumerdEntry"
+                Placeholder="number"
+                PlaceholderColor="#000000"
+                FontSize="20"
+                HorizontalTextAlignment="Center"/>
+            </Frame>
+        <Image
+            Grid.Row="6"
+            Grid.Column="1"
+         
+            Source="Resources/Images/teck.png"
+            WidthRequest="30"
+            HeightRequest="30"
+            HorizontalOptions="CenterAndExpand"
+            Margin="0,20,0,40">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="EditProfile"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+
+    </StackLayout>
+
+</ContentPage>

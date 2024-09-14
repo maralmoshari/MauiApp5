@@ -10,7 +10,7 @@ namespace MauiApp5
         }
         private void ProfileButton(object sender, EventArgs e)
         {
-            
+            Navigation.PushAsync(new ProfilePage());
         }
 
     }

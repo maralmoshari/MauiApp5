@@ -117,7 +117,23 @@
             Margin="0, 5, 0, 0"
             Clicked="ChooseGroup"/>
 
+            <Image
+            Grid.Row="6"
+            Grid.Column="1"
+         
+            Source="Resources/Images/teck.png"
+            WidthRequest="30"
+            HeightRequest="30"
+            HorizontalOptions="CenterAndExpand"
+            Margin="0,40,0,40">
 
-    </StackLayout>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AddNewUser"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+
+
+        </StackLayout>
     </ScrollView>
 </ContentPage>
