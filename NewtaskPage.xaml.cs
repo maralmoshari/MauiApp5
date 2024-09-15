@@ -29,7 +29,7 @@ public partial class NewtaskPage : ContentPage
     private void ChoosePrerequisite(object sender, EventArgs e)
     {
 
-
+        this.ShowPopup(new PrerequisitePage());
     }
     private void ChooseNextTask(object sender, EventArgs e)
     {
@@ -44,7 +44,7 @@ public partial class NewtaskPage : ContentPage
     }
     private void ChoosePriority(object sender, EventArgs e)
     {
-
+        this.ShowPopup(new PriorityPopup());
 
     }
     private void Choosecreatedby(object sender, EventArgs e)

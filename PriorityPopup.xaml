@@ -5,5 +5,32 @@
                x:Class="MauiApp5.PriorityPopup"
                xmlns:controls="clr-namespace:Plugin.Maui.Calendar.Controls;assembly=Plugin.Maui.Calendar" >
 
+    <VerticalStackLayout Padding="10">
+        <!-- سایر کنترل‌ها -->
+
+        <Slider x:Name="mySlider"
+                Minimum="0"
+                Maximum="100"
+                Value="50"
+                HeightRequest="50"
+                WidthRequest="200"/>
+
+        <Button 
+            Text="Ok"
+            Margin="0,5,0,5"
+            BackgroundColor="#FFCCE5"
+            TextColor="#ffffff"
+            FontSize="20"
+            HorizontalOptions="Center"
+            CornerRadius="20"
+            WidthRequest="80"
+            HeightRequest="42"
+            Clicked="AddPriority" />
+
+
+
+
+    </VerticalStackLayout>
+
 
 </toolkit:Popup>

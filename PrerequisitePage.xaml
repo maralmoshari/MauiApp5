@@ -1,0 +1,87 @@
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="MauiApp5.PrerequisitePage"
+               xmlns:controls="clr-namespace:Plugin.Maui.Calendar.Controls;assembly=Plugin.Maui.Calendar" >
+    <StackLayout>
+        <Frame
+
+             Background="#FFCCE5"
+
+             HeightRequest="100">
+        <Entry
+                  x:Name="Description"
+                  Placeholder=" DESCRIPTION"
+                  PlaceholderColor="#FFFFFF"
+                  FontSize="20"
+                  HorizontalTextAlignment="Center"/>
+    </Frame>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <CollectionView ItemsSource="{Binding Members}"
+                        SelectedItem="{Binding SelectedUser}"
+                        HeightRequest="400"
+                        Grid.Row="0"
+                        SelectionMode="Multiple"
+                        SelectionChanged="OnMemberSelected">
+
+                <CollectionView.ItemTemplate >
+                    <DataTemplate>
+
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2"
+                               BackgroundColor="White"
+                               Source="{Binding ImageSource}"
+                               Aspect="AspectFill"
+                               HeightRequest="60"
+                               WidthRequest="60" />
+                            <Label Grid.Column="1"
+                               TextColor="Black"
+                               Text="{Binding Username}"
+                               FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                               Grid.Column="1"
+                               TextColor="Black"
+                               Text="{Binding Description}"
+                               FontAttributes="Italic"
+                               VerticalOptions="End" />
+                        </Grid>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+
+
+        <Button Text=" Choose File" Clicked="OnPickFileClicked" Margin="0,5,0,0" 
+            HeightRequest="40"
+
+            BackgroundColor="#CCE5FF"/>
+
+        <Button 
+            Text="ADD"
+            Margin="0,5,0,5"
+            BackgroundColor="#FFCCE5"
+            TextColor="#ffffff"
+            FontSize="20"
+            HorizontalOptions="Center"
+            CornerRadius="20"
+            WidthRequest="80"
+            HeightRequest="42"
+            Clicked="AddPrrequisite" />
+
+    </StackLayout>
+    
+</toolkit:Popup>
