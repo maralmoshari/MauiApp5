@@ -23,7 +23,7 @@ public partial class NewGroupPage : ContentPage
 
     }
 
-    private void AddNewGroup(object sender, TappedEventArgs e)
+    private void AddNewGroup(object sender, EventArgs e)
     {
         Navigation.PopAsync();
     }

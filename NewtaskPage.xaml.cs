@@ -44,8 +44,7 @@ public partial class NewtaskPage : ContentPage
     }
     private void ChoosePriority(object sender, EventArgs e)
     {
-        var popup = new PriorityPopup();
-        this.ShowPopup(popup);
+
 
     }
     private void Choosecreatedby(object sender, EventArgs e)

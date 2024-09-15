@@ -5,18 +5,5 @@
                x:Class="MauiApp5.PriorityPopup"
                xmlns:controls="clr-namespace:Plugin.Maui.Calendar.Controls;assembly=Plugin.Maui.Calendar" >
 
-        <StackLayout>
-            <Label x:Name="rotatingLabel"
-               Text="ROTATING TEXT"
-               FontSize="18"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />
-            <Slider Maximum="100"
-                ValueChanged="OnSliderValueChanged" />
-            <Label x:Name="displayLabel"
-               Text="(uninitialized)"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />
-        </StackLayout>
 
 </toolkit:Popup>

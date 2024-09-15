@@ -2,8 +2,10 @@ namespace MauiApp5;
 
 public partial class TaskDeatailsPage : ContentPage
 {
-	public TaskDeatailsPage()
-	{
-		InitializeComponent();
-	}
+    public TaskDeatailsPage(Task SelectedDomainTask)
+    {
+        InitializeComponent();
+        BindingContext = SelectedDomainTask;
+    }
+
 }

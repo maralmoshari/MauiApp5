@@ -8,7 +8,7 @@ public partial class PriorityPopup : Popup
  ///  double value = slider.Value;
  ///
  ///  public PriorityPopup()
-/{//
+//
  ///      Slider slider = new Slider
  ///      {
  ///          Maximum = 360
@@ -20,7 +20,7 @@ public partial class PriorityPopup : Popup
  ///      };
  ///      InitializeComponent();
  ///
-/}//
+//
  ///  void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
  ///  {
  ///      double value = args.NewValue;

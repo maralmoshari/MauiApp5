@@ -9,19 +9,19 @@ public partial class SmsPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        timerFunc();
+      //  timerFunc();
     }
-    private async Task timerFunc()
-    {
-        for (int i = 3; i >= 0; i--)
-        {
-            for (int j = 59; j >= 0; j--)
-            {
-                timerLabel.Text = $"{i}:{j}";
-                await Task.Delay(1000);
-            }
-        }
-    }
+   // private async Task timerFunc()
+   // {
+   //  // for (int i = 3; i >= 0; i--)
+   //  // {
+   //  //     for (int j = 59; j >= 0; j--)
+   //  //     {
+   //  //         timerLabel.Text = $"{i}:{j}";
+   //  //         await Task.Delay(1000);
+   //  //     }
+   //  // }
+   // }
     string smspassword = "12345";
     private void DoneButton(object sender, EventArgs e)
     {

@@ -6,18 +6,6 @@ namespace MauiApp5;
 public partial class GroupDetailsPage : ContentPage
 {
     public ObservableCollection<Member> Members { get; set; }
-    public class Task
-    {
-        public string Title { get; set; }
-        public string Description { get; set; }
-
-        public Task(string title, string description)
-        {
-            Title = title;
-            Description = description;
-
-        }
-    }
 
     public ObservableCollection<Task> Tasks { get; set; }
 
@@ -61,22 +49,21 @@ public partial class GroupDetailsPage : ContentPage
         //this will complete all the collectionviews :)
         BindingContext = this;
 
-        //CollectionView collectionViewMember = new CollectionView();
-        //collectionViewMember.SetBinding(ItemsView.ItemsSourceProperty, nameof(Tasks));
+ 
     }
     private void AddTask(object sender, EventArgs e)
     {
-        var popup = new TaskPopup();
-        this.ShowPopup(popup);
+        this.ShowPopup(new TaskPopup());
+
 
     }
     private void AddUser(object sender, EventArgs e)
     {
-        {
+        
             var popup = new UserPopup();
             this.ShowPopup(popup);
 
 
-        }
+        
     }
 }

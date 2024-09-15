@@ -4,18 +4,7 @@ namespace MauiApp5;
 
 public partial class DomainPage : ContentPage
 {
-    public class Domain
-    {
-        public string Title { get; set; }
-        public string Description { get; set; }
 
-        public Domain(string title, string description)
-        {
-            Title = title;
-            Description = description;
-
-        }
-    }
 
     public ObservableCollection<Domain> Domains { get; set; } // Using ObservableCollection for automatic updates
 
@@ -40,14 +29,17 @@ public partial class DomainPage : ContentPage
     }
     private async void OnDomainSelect(object sender, SelectionChangedEventArgs e)
     {
-      //  var SelectedDomain = e.CurrentSelection.FirstOrDefault() as Domain;
-      //  if (SelectedDomain != null)
-      //  {
-      //      await Navigation.PushAsync(new DomainsSubPage(SelectedDomain));
-      //      // Reset selection to avoid re-triggering the same item
-      //      ((CollectionView)sender).SelectedItem = null;
-      //  }
+       var SelectedDomain = e.CurrentSelection.FirstOrDefault() as Domain;
+       if (SelectedDomain != null)
+       {
+           await Navigation.PushAsync(new DomainsSubPage(SelectedDomain));
+           // Reset selection to avoid re-triggering the same item
+           ((CollectionView)sender).SelectedItem = null;
+       }
     }
 
-
+    private void AddNewDomain(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new NewDomainPage());
+    }
 }
