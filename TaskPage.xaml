@@ -17,29 +17,31 @@
                         Grid.Row="0">
             <CollectionView.ItemTemplate >
                 <DataTemplate >
-                    <Grid Padding="10"
+                    <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
+                        <Grid Padding="10"
                           BackgroundColor="White"
                           >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
 
-                        <Label Grid.Column="1"
+                            <Label Grid.Column="1"
                            TextColor="Black"
                            Text="{Binding Title}"
                            FontAttributes="Bold" />
-                        <Label Grid.Row="1"
+                            <Label Grid.Row="1"
                            Grid.Column="1"
                            TextColor="Black"
                            Text="{Binding Description}"
                            FontAttributes="Italic"
                            VerticalOptions="End" />
-                    </Grid>
+                        </Grid>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

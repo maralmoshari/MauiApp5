@@ -52,7 +52,7 @@ public partial class DomainPopup : Popup
     }
     private void ChooseDomain(object sender, EventArgs e)
     {
-       
+        Close();
 
     }
 

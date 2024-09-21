@@ -3,16 +3,14 @@ using System.Collections.ObjectModel;
 
 namespace MauiApp5;
 
-public partial class TaskPopup : Popup
+public partial class PreOrNextTaskPopup : Popup
 {
-
-
-
     public ObservableCollection<Task> Tasks { get; set; } // Using ObservableCollection for automatic updates
 
-    public TaskPopup()
+    public PreOrNextTaskPopup()
 	{
 		InitializeComponent();
+
 
         Tasks = new ObservableCollection<Task>();
 
@@ -31,18 +29,21 @@ public partial class TaskPopup : Popup
     }
     private async void OnTaskSelected(object sender, SelectionChangedEventArgs e)
     {
-         var selectedMember = e.CurrentSelection.FirstOrDefault() as Member;
-         if (selectedMember != null)
-         {
-             //await Navigation.PushAsync(new MemberDetailsPage(selectedMember));
-             
-             // Reset selection to avoid re-triggering the same item
-             ((CollectionView)sender).SelectedItem = null;
-         }
+        var selectedMember = e.CurrentSelection.FirstOrDefault() as Member;
+        if (selectedMember != null)
+        {
+            //await Navigation.PushAsync(new MemberDetailsPage(selectedMember));
+
+            // Reset selection to avoid re-triggering the same item
+            //((CollectionView)sender).SelectedItem = null;
+        }
     }
-    private void Choosetask(object sender, EventArgs e)
+
+    private void ChoosePreOrNxtTask(object sender, EventArgs e)
     {
         Close();
 
+
     }
+    
 }

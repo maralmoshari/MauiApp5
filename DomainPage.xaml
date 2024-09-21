@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp5.DomainPage"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MauiApp5.DomainPage" 
              Title="DomainPage">
-
 
     <Grid>
         <Grid.RowDefinitions>
@@ -11,49 +10,70 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <CollectionView ItemsSource="{Binding Domains}"
-                        SelectedItem="{Binding SelectedDomain}"
-                        SelectionMode="Single"
-                        SelectionChanged="OnDomainSelect"
-                        HeightRequest="400"
+        <!-- CollectionView for displaying domains -->
+        <CollectionView ItemsSource="{Binding Domains}" 
+                        SelectedItem="{Binding SelectedDomain}" 
+                        SelectionMode="Single" 
+                        SelectionChanged="OnDomainSelect" 
+                        HeightRequest="400" 
                         Grid.Row="0">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10"
-                          >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                      
-                        <Label Grid.Column="1"
-                           TextColor="Black"
-                           Text="{Binding Title}"
-                           FontAttributes="Bold" />
-                        <Label Grid.Row="1"
-                           Grid.Column="1"
-                           TextColor="Black"
-                           Text="{Binding Description}"
-                           FontAttributes="Italic"
-                           VerticalOptions="End" />
-                    </Grid>
+                    <!-- SwipeView wrapping the content -->
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <!-- Define swipe actions -->
+                                <SwipeItem Text="Delete" 
+                                           BackgroundColor="Red" 
+                                           Command="{Binding DeleteCommand}" />
+                                <SwipeItem Text="Update" 
+                                           BackgroundColor="Blue" 
+                                           Command="{Binding UpdateCommand}" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+
+                        <!-- Main Content inside SwipeView -->
+                        <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Title Label -->
+                                <Label Grid.Column="1" 
+                                   TextColor="Black" 
+                                   Text="{Binding Title}" 
+                                   FontAttributes="Bold" />
+                                <!-- Description Label -->
+                                <Label Grid.Row="1" 
+                                   Grid.Column="1" 
+                                   TextColor="Black" 
+                                   Text="{Binding Description}" 
+                                   FontAttributes="Italic" 
+                                   VerticalOptions="End" />
+                            </Grid>
+                        </Frame>
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Grid.Row="1"
-                Text="+"
-                BackgroundColor="#FFCCE5"
-                TextColor="#ffffff"
-                FontSize="20"
-                HorizontalOptions="Center"
-                CornerRadius="20"
-                WidthRequest="50"
-                HeightRequest="50"
-                Clicked="AddNewDomain" />
 
+        <!-- Add Button -->
+        <Button Grid.Row="1" 
+                Text="+" 
+                BackgroundColor="#FFCCE5" 
+                TextColor="#ffffff" 
+                FontSize="20" 
+                HorizontalOptions="Center" 
+                CornerRadius="20" 
+                WidthRequest="50" 
+                HeightRequest="50" 
+                Clicked="AddNewDomain" />
     </Grid>
 </ContentPage>

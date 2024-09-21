@@ -34,16 +34,19 @@ public partial class GroupDetailsPage : ContentPage
 
 
         Members = new ObservableCollection<Member>();
-
+        int MemberCount = 20;
+        string FFname = "maral";
+        string FLname = "moshari";
         string FUsername = "User1";
-        string FuserDescription = "This is a description.";
+        string FUDescription = "This is a description.";
         string ImageSource = "Resources/Images/account.png";
         string Fjobtitle = "manager";
         string Fphonenumber = "0901090827";
 
-        for (int i = 0; i < 20; i++)
+
+        for (int i = 0; i < MemberCount; i++)
         {
-            Members.Add(new Member(FUsername, FuserDescription, ImageSource, Fjobtitle, Fphonenumber));
+            Members.Add(new Member(FFname, FLname, FUsername, FUDescription, ImageSource, Fjobtitle, Fphonenumber));
         }
 
         //this will complete all the collectionviews :)

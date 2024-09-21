@@ -7,16 +7,7 @@
     <ScrollView>
         <StackLayout>
 
-            <Button
-            Text="Group"
-            BackgroundColor="#FFCCE5"
-            TextColor="White"
-            FontSize="50"
-            CornerRadius="40"
-            WidthRequest="358"
-            HeightRequest="93"
-            Margin="0, 30, 0, 20"
-            Clicked="groupButton"/>
+
         <Button
             Text="People"
             BackgroundColor="#FFCCFF"
@@ -25,7 +16,7 @@
             CornerRadius="40"
             WidthRequest="358"
             HeightRequest="93"
-            Margin="0, 30, 0, 20"
+            Margin="0, 150, 0, 20"
             Clicked="peopleButton"/>
         <Button
             Text="Domain"

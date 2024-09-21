@@ -37,9 +37,9 @@
                 IsPassword="True"/>
         </Frame>
         <Button
-            BackgroundColor="Gray"
-            WidthRequest="30"
-            HeightRequest="30"
+            BackgroundColor="#FFCCE5"
+            WidthRequest="50"
+            HeightRequest="50"
             CornerRadius="40"
             Margin="0, 0, 30, 0"
             HorizontalOptions="End"
@@ -67,6 +67,7 @@
             BackgroundColor="white"
             Text="Forgot Password"
             TextColor="Black"
+            Clicked="forgotPasswordButton"
             />
     </StackLayout>
 </ContentPage>

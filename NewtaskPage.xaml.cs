@@ -8,9 +8,9 @@ public partial class NewtaskPage : ContentPage
 	{
 		InitializeComponent();
 	}
-    private void ChooseUser(object sender, EventArgs e)
+    private void ChooseAsign(object sender, EventArgs e)
     {
-        var popup = new UserPopup();
+        var popup = new AsigntoPersonPopup();
         this.ShowPopup(popup);
 
     }
@@ -31,9 +31,9 @@ public partial class NewtaskPage : ContentPage
 
         this.ShowPopup(new PrerequisitePage());
     }
-    private void ChooseNextTask(object sender, EventArgs e)
+    private void ChoosSleeptime(object sender, EventArgs e)
     {
-        this.ShowPopup(new TaskPopup());
+        this.ShowPopup(new SleepTimePopup());
 
     }
 
@@ -47,16 +47,16 @@ public partial class NewtaskPage : ContentPage
         this.ShowPopup(new PriorityPopup());
 
     }
-    private void Choosecreatedby(object sender, EventArgs e)
+    //private void Choosecreatedby(object sender, EventArgs e)
+    //{
+    //    var popup = new UserPopup();
+    //    this.ShowPopup(popup);
+    //
+    //
+    //}
+    private void ChoosePreNTask(object sender, EventArgs e)
     {
-        var popup = new UserPopup();
-        this.ShowPopup(popup);
-
-
-    }
-    private void ChoosePreTask(object sender, EventArgs e)
-    {
-        this.ShowPopup(new TaskPopup());
+        this.ShowPopup(new PreOrNextTaskPopup());
 
     }
 

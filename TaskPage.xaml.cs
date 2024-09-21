@@ -40,11 +40,6 @@ public partial class TaskPage : ContentPage
 
 
 
-            CollectionView collectionView = new CollectionView();
-            collectionView.SetBinding(ItemsView.ItemsSourceProperty, nameof(Tasks));
-
-
-
         }
     private async void OnTaskSelected(object sender, SelectionChangedEventArgs e)
     {

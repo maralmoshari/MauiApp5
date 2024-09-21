@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiApp5.PreOrNextTaskPopup">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <!-- CollectionView -->
+            <CollectionView ItemsSource="{Binding Tasks}" 
+                        SelectedItem="{Binding selectedMember}" 
+                        SelectionMode="Multiple" 
+                        SelectionChanged="OnTaskSelected" 
+                        HeightRequest="400" 
+                        Grid.Row="0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- SwipeView wrapping the content -->
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <!-- Define swipe actions -->
+                                    <SwipeItem Text="Previous" 
+                                           BackgroundColor="#FFCCE5" 
+                                           Command="{Binding DeleteCommand}" />
+                                <SwipeItem Text="Next" 
+                                           BackgroundColor="#CCE5FF" 
+                                           Command="{Binding EditCommand}" />
+                            </SwipeItems>
+                            </SwipeView.LeftItems>
+
+                            <!-- Main Content inside SwipeView -->
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Title Label -->
+                                <Label Grid.Column="1" 
+                                   TextColor="Black" 
+                                   Text="{Binding Title}" 
+                                   FontAttributes="Bold" />
+                                <!-- Description Label -->
+                                <Label Grid.Row="1" 
+                                   Grid.Column="1" 
+                                   TextColor="Black" 
+                                   Text="{Binding Description}" 
+                                   FontAttributes="Italic" 
+                                   VerticalOptions="End" />
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Image with Tap Gesture -->
+            <Image 
+            Grid.Row="6" 
+            Grid.Column="1" 
+            Source="Resources/Images/teck.png" 
+            WidthRequest="30" 
+            HeightRequest="30" 
+            HorizontalOptions="CenterAndExpand" 
+            Margin="0,-40,0,40">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ChoosePreOrNxtTask"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+        </Grid>
+
+
+
+</toolkit:Popup>

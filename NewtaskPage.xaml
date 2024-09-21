@@ -54,7 +54,7 @@
         <Button
             Grid.Row="2"
             Grid.Column="0"
-            Text="a sing to person"
+            Text="a sing to "
             BackgroundColor="#FFCCE5"
             TextColor="White"
             FontSize="20"
@@ -62,7 +62,7 @@
             WidthRequest="180"
             HeightRequest="100"
             Margin="0, 0, 0, 160"
-            Clicked="ChooseUser"/>
+            Clicked="ChooseAsign"/>
         <Button
             Grid.Row="3"
             Grid.Column="0"
@@ -118,7 +118,7 @@
         <Button
             Grid.Row="3"
             Grid.Column="1"
-            Text="Next Task"
+            Text="Sleep Time"
             BackgroundColor="#FFCCE5"
             TextColor="White"
             FontSize="20"
@@ -126,7 +126,7 @@
             WidthRequest="180"
             HeightRequest="100"
             Margin="10, -460, 0, 0"
-            Clicked="ChooseNextTask"/>
+            Clicked="ChoosSleeptime"/>
         <Button
             Grid.Row="4"
             Grid.Column="1"
@@ -154,16 +154,16 @@
         <Button
             Grid.Row="6"
             Grid.Column="0"
-            Text="Created By"
+            Text="Previous And Next Task"
             BackgroundColor="#FFCCE5"
             TextColor="White"
-            FontSize="20"
+            FontSize="0"
             CornerRadius="20"
             WidthRequest="180"
             HeightRequest="100"
             Margin="10, -315, 0, 0"
-            Clicked="Choosecreatedby"/>
-        <Button
+            Clicked="ChoosePreNTask"/>
+       <!-- <Button
             Grid.Row="6"
             Grid.Column="0"
             Text="Previous Task"
@@ -174,7 +174,7 @@
             WidthRequest="180"
             HeightRequest="100"
             Margin="10, 0, 0, 80"
-            Clicked="ChoosePreTask"/>
+            Clicked="ChoosePreTask"/>-->
 
         <Image
             Grid.Row="6"

@@ -6,14 +6,22 @@
                xmlns:controls="clr-namespace:Plugin.Maui.Calendar.Controls;assembly=Plugin.Maui.Calendar" >
 
     <VerticalStackLayout Padding="10">
-        <!-- سایر کنترل‌ها -->
+                <!-- سایر کنترل‌ها -->
 
-        <Slider x:Name="mySlider"
+                <Slider x:Name="mySlider"
                 Minimum="0"
                 Maximum="100"
                 Value="50"
-                HeightRequest="50"
-                WidthRequest="200"/>
+                ThumbColor="Blue"
+                MinimumTrackColor="#CCFFE5"
+                MaximumTrackColor="#FFCCCC" />
+
+                <!-- نمایش مقدار اسلایدر -->
+                <Label x:Name="sliderValueLabel"
+               Text="Value: 50"
+               VerticalOptions="Center" />
+
+
 
         <Button 
             Text="Ok"

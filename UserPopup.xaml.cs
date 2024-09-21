@@ -11,17 +11,21 @@ public partial class UserPopup : Popup
     {
         InitializeComponent();
         Members = new ObservableCollection<Member>();
-
+        int MemberCount = 20;
+        string FFname = "maral";
+        string FLname = "moshari";
         string FUsername = "User1";
         string FDescription = "This is a description.";
         string ImageSource = "Resources/Images/account.png";
         string Fjobtitle = "manager";
         string Fphonenumber = "0901090827";
 
-        for (int i = 0; i < 20; i++)
+
+        for (int i = 0; i < MemberCount; i++)
         {
-            Members.Add(new Member(FUsername, FDescription, ImageSource, Fjobtitle, Fphonenumber));
+            Members.Add(new Member(FFname, FLname, FUsername, FDescription, ImageSource, Fjobtitle, Fphonenumber));
         }
+
 
         BindingContext = this;
     }
@@ -35,5 +39,10 @@ public partial class UserPopup : Popup
        //     // Reset selection to avoid re-triggering the same item
        //     ((CollectionView)sender).SelectedItem = null;
        // }
+    }
+    private void Chooseuser(object sender, EventArgs e)
+    {
+        Close();
+
     }
 }

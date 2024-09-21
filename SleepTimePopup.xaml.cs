@@ -1,12 +1,10 @@
-namespace MauiApp5;
-
-using Android.Content.Res;
 using CommunityToolkit.Maui.Views;
 
-public partial class DeadlinePopup : Popup
+namespace MauiApp5;
 
+public partial class SleepTimePopup : Popup
 {
-	public DeadlinePopup()
+	public SleepTimePopup()
 	{
 		InitializeComponent();
 	}
@@ -15,9 +13,9 @@ public partial class DeadlinePopup : Popup
         // Display the selected time in the label
         SelectedTimeLabel.Text = "Selected Time: " + TimePickerControl.Time.ToString(@"hh\:mm");
     }
-    
 
-private void AcceptTime(object sender, EventArgs e)
+
+    private void AcceptTime(object sender, EventArgs e)
     {
        Close();
 

@@ -38,7 +38,7 @@ public partial class GroupPopupPage : Popup
     }
     private void ChooseGroup(object sender, EventArgs e)
     {
-        
+        Close();
 
 
     }
