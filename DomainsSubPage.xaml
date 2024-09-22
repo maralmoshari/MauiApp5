@@ -21,29 +21,46 @@
                             
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="10"
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete"  
+                                            BackgroundColor="#E5CCFF"  
+                                            Command="{Binding DeleteCommand}" />
+                                <SwipeItem Text="Update"  
+                                            BackgroundColor="#FFCCFF"  
+                                            Command="{Binding UpdateCommand}" />
+                                <SwipeItem Text="Groups"  
+                                            BackgroundColor="#FFCCE5"  
+                                            Command="{Binding AddGroupCommand}" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
+                            <Grid Padding="10"
                           >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
 
-                            <Label Grid.Column="1"
+                                <Label Grid.Column="1"
                            TextColor="Black"
                            Text="{Binding Title}"
                            FontAttributes="Bold" />
-                            <Label Grid.Row="1"
+                                <Label Grid.Row="1"
                            Grid.Column="1"
                            TextColor="Black"
                            Text="{Binding Description}"
                            FontAttributes="Italic"
                            VerticalOptions="End" />
-                        </Grid>
-                    </DataTemplate>
+                            </Grid>
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         <Button Grid.Row="1"

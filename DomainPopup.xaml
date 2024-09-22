@@ -4,8 +4,6 @@
                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
                x:Class="MauiApp5.DomainPopup">
 
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="500" />
@@ -14,54 +12,51 @@
 
         <CollectionView ItemsSource="{Binding Domains}"
                         SelectedItem="{Binding SelectedDomain}"
-                        SelectionMode="Multiple"
+                        SelectionMode="Single"
                         SelectionChanged="OnDomainSelect"
                         HeightRequest="400"
                         Grid.Row="0">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10"
-                          >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                        <Label Grid.Column="1"
-                           TextColor="Black"
-                           Text="{Binding Title}"
-                           FontAttributes="Bold" />
-                        <Label Grid.Row="1"
-                           Grid.Column="1"
-                           TextColor="Black"
-                           Text="{Binding Description}"
-                           FontAttributes="Italic"
-                           VerticalOptions="End" />
-                    </Grid>
+                                <Label Grid.Column="0"
+                                   TextColor="Black"
+                                   Text="{Binding Title}"
+                                   FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                   Grid.Column="0"
+                                   TextColor="Black"
+                                   Text="{Binding Description}"
+                                   FontAttributes="Italic"
+                                   VerticalOptions="End" />
+                            </Grid>
+                        </Frame>
+
+                    </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Image
-            Grid.Row="6"
-            Grid.Column="1"
-         
-            Source="Resources/Images/teck.png"
-            WidthRequest="30"
-            HeightRequest="30"
-            HorizontalOptions="CenterAndExpand"
-            Margin="0,-40,0,40">
 
+        <Image Grid.Row="1"
+               Source="Resources/Images/teck.png"
+               WidthRequest="30"
+               HeightRequest="30"
+               HorizontalOptions="Center"
+               Margin="0,-40,0,40">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ChooseDomain"/>
             </Image.GestureRecognizers>
         </Image>
-
-
     </Grid>
-
-
 </toolkit:Popup>

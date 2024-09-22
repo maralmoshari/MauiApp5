@@ -21,6 +21,7 @@ public partial class PrerequisitePage : Popup
         string Fphonenumber = "0901090827";
 
 
+
         for (int i = 0; i < MemberCount; i++)
         {
             Members.Add(new Member(FFname, FLname, FUsername, FDescription, ImageSource, Fjobtitle, Fphonenumber));
@@ -28,17 +29,29 @@ public partial class PrerequisitePage : Popup
 
         BindingContext = this;
     }
-    private async void OnMemberSelected(object sender, SelectionChangedEventArgs e)
+    private void OnMemberSelected(object sender, SelectionChangedEventArgs e)
     {
-        // var selectedMember = e.CurrentSelection.FirstOrDefault() as Member;
-        // if (selectedMember != null)
-        // {
-        //     //await Navigation.PushAsync(new MemberDetailsPage(selectedMember));
-        //     
-        //     // Reset selection to avoid re-triggering the same item
-        //     ((CollectionView)sender).SelectedItem = null;
-        // }
+        if (e.CurrentSelection.Count > 0)
+        {
+            var selectedUser = e.CurrentSelection[0] as Member;
+
+            // تغییر وضعیت IsEntryVisible
+            selectedUser.IsEntryVisible = !selectedUser.IsEntryVisible;
+
+            // در صورت تمایل، سایر کاربران را مخفی کنید
+            foreach (var member in Members)
+            {
+                if (member != selectedUser)
+                {
+                    member.IsEntryVisible = false;
+                }
+            }
+
+            // به‌روزرسانی نمایش
+            OnPropertyChanged(nameof(Members));
+        }
     }
+
     private async void OnPickFileClicked(object sender, EventArgs e)
     {
         try
@@ -54,17 +67,19 @@ public partial class PrerequisitePage : Popup
         {
             await Application.Current.MainPage.DisplayAlert("خطا", "خطایی رخ داده است: " + ex.Message, "باشه");
         }
+
     }
     
      private void AddPrrequisite(object sender, EventArgs e)
     {
-         //Navigation.PopAsync();
+        Close();
+
 
     }
     
-     private void AddUserToTask(object sender, EventArgs e)
-    {
-       
-        Close();
-    }
+   //  private void AddUserToTask(object sender, EventArgs e)
+   // {
+   //    
+   //     Close();
+   // }
 }

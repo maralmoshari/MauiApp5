@@ -1,3 +1,4 @@
+using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
 
 namespace MauiApp5;
@@ -71,6 +72,12 @@ public partial class DomainPage : ContentPage
             // Reset selection to avoid re-triggering the same item
             ((CollectionView)sender).SelectedItem = null;
         }
+    }
+    private void AddTask(object sender, EventArgs e)
+    {
+        this.ShowPopup(new TaskPopup());
+
+
     }
 
     private void AddNewDomain(object sender, EventArgs e)

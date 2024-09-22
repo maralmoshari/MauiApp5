@@ -4,35 +4,36 @@
              x:Class="MauiApp5.DomainPage" 
              Title="DomainPage">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="500" />
-            <RowDefinition Height="50" />
-        </Grid.RowDefinitions>
 
-        <!-- CollectionView for displaying domains -->
-        <CollectionView ItemsSource="{Binding Domains}" 
+    <ScrollView>
+        <Grid RowDefinitions="*,*">
+        <StackLayout Grid.Row="0">
+
+            <Grid Grid.Row="0">
+                <!-- CollectionView for displaying domains -->
+            <CollectionView ItemsSource="{Binding Domains}" 
                         SelectedItem="{Binding SelectedDomain}" 
                         SelectionMode="Single" 
                         SelectionChanged="OnDomainSelect" 
-                        HeightRequest="400" 
+                        HeightRequest="500" 
                         Grid.Row="0">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <!-- SwipeView wrapping the content -->
-                    <SwipeView>
-                        <SwipeView.LeftItems>
-                            <SwipeItems>
-                                <!-- Define swipe actions -->
-                                <SwipeItem Text="Delete" 
-                                           BackgroundColor="Red" 
-                                           Command="{Binding DeleteCommand}" />
-                                <SwipeItem Text="Update" 
-                                           BackgroundColor="Blue" 
-                                           Command="{Binding UpdateCommand}" />
-                            </SwipeItems>
-                        </SwipeView.LeftItems>
-
+                                <SwipeView>
+                                    <SwipeView.LeftItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="Delete"  
+                                            BackgroundColor="#E5CCFF"  
+                                            Command="{Binding DeleteCommand}" />
+                                            <SwipeItem Text="Update"  
+                                            BackgroundColor="#FFCCFF"  
+                                            Command="{Binding UpdateCommand}" />
+                                            <SwipeItem Text="Sub Domain"  
+                                            BackgroundColor="#FFCCE5"  
+                                            Command="{Binding AddSubCommand}" />
+                                        </SwipeItems>
+                                    </SwipeView.LeftItems>
                         <!-- Main Content inside SwipeView -->
                         <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
                             <Grid Padding="10">
@@ -63,17 +64,107 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+                
 
         <!-- Add Button -->
         <Button Grid.Row="1" 
                 Text="+" 
-                BackgroundColor="#FFCCE5" 
+                BackgroundColor="#ffcce5" 
                 TextColor="#ffffff" 
-                FontSize="20" 
-                HorizontalOptions="Center" 
-                CornerRadius="20" 
-                WidthRequest="50" 
-                HeightRequest="50" 
-                Clicked="AddNewDomain" />
+                Margin="0,0,0,-580"
+                  FontSize="15"
+                  HorizontalOptions="Center"
+                  CornerRadius="40"
+                  WidthRequest="40"
+                  HeightRequest="40"
+                Clicked="AddNewDomain"/>
+            </Grid>
+
+            </StackLayout>
+
+        
+        
+        
+            <!-- task -->
+        <StackLayout Grid.Row="1">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="500"   />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <CollectionView ItemsSource="{Binding Tasks}"
+                        SelectedItem="{Binding SelectedTask}" 
+                        SelectionMode="Single" 
+                        SelectionChanged="OnTaskSelected" 
+                        HeightRequest="400"
+                        WidthRequest="340"
+                                Margin="0,80,0,0"
+                                BackgroundColor="#CCFFFF"
+
+                        Grid.Row="0">
+                    <CollectionView.ItemTemplate>
+
+                            <DataTemplate >
+                                <SwipeView>
+                                    <SwipeView.LeftItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="Delete"  
+                                            BackgroundColor="#E5CCFF"  
+                                            Command="{Binding DeleteCommand}" />
+                                            <SwipeItem Text="Update"  
+                                            BackgroundColor="#FFCCFF"  
+                                            Command="{Binding UpdateCommand}" />
+
+                                        </SwipeItems>
+                                    </SwipeView.LeftItems>
+                                    <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="White">
+                                        <Grid Padding="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Grid.Column="1"
+                                       TextColor="Black"
+                                       Text="{Binding Title}"
+                                       FontAttributes="Bold" />
+                                            <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       TextColor="Black"
+                                       Text="{Binding Description}"
+                                       FontAttributes="Italic"
+                                       VerticalOptions="End" />
+                                        </Grid>
+                                    </Frame>
+                                </SwipeView>
+                            </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button
+                  Grid.Row="1"
+
+                  Text="+"
+                  BackgroundColor="#FFCCE5"
+                  TextColor="#ffffff"
+                  FontSize="15"
+                  HorizontalOptions="Center"
+                  CornerRadius="40"
+                  WidthRequest="40"
+                  HeightRequest="40"
+                  Clicked="AddTask"/>
+            </Grid>
+        </StackLayout>
+
+
+
+
+
+
     </Grid>
+    </ScrollView>
+
 </ContentPage>

@@ -127,7 +127,25 @@
             HeightRequest="100"
             Margin="10, -460, 0, 0"
             Clicked="ChoosSleeptime"/>
-        <Button
+
+
+        <Frame
+            Grid.Row="4"
+            Grid.Column="1"
+             BorderColor="White"
+             Background="#FFCCE5"
+             WidthRequest="180"
+             HeightRequest="100"
+             Margin="0,0,-15,530"
+             CornerRadius="20">
+            <Entry
+                  x:Name="CoupleEntry"
+                  Placeholder=" Couple "
+                  PlaceholderColor="#FFFFFF"
+                  FontSize="20"
+                  HorizontalTextAlignment="Center"/>
+        </Frame>
+        <!-- <Button
             Grid.Row="4"
             Grid.Column="1"
             Text="Couple Task"
@@ -138,7 +156,7 @@
             WidthRequest="180"
             HeightRequest="100"
             Margin="10, -540, 0, 0"
-            Clicked="ChooseCouple"/>
+            Clicked="ChooseCouple"/>-->
         <Button
             Grid.Row="5"
             Grid.Column="1"

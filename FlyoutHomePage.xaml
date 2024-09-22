@@ -1,0 +1,183 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.FlyoutHomePage">
+    <Grid>
+        <!-- Main Content -->
+        <Grid x:Name="MainContent">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnMainContentTapped" />
+            </Grid.GestureRecognizers>
+            <StackLayout>
+                <Button Clicked="OnMenuClicked" 
+                        BackgroundColor="White"
+                        CornerRadius="35"
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        Margin="1,10,290,0"
+                        Scale="2"
+                        ImageSource="Resources/Images/menuuu.png"/>
+                <Button
+            Text="People"
+            BackgroundColor="#FFCCFF"
+            TextColor="White"
+            FontSize="50"
+            CornerRadius="40"
+            WidthRequest="358"
+            HeightRequest="93"
+            Margin="0, 80, 0, 20"
+            Clicked="peopleButton"/>
+                <Button
+            Text="Domain"
+            BackgroundColor="#E5CCFF"
+            TextColor="White"
+            FontSize="50"
+            CornerRadius="40"
+            WidthRequest="358"
+            HeightRequest="93"
+            Margin="0, 30, 0, 20"
+            Clicked="domainButton"/>
+                <Button
+            Text="Task"
+            BackgroundColor="#CCCCFF"
+            TextColor="White"
+            FontSize="50"
+            CornerRadius="40"
+            WidthRequest="358"
+            HeightRequest="93"
+            Margin="0, 30, 0, 20"
+            Clicked="taskButton"/>
+            </StackLayout>
+        </Grid>
+
+        <!-- Flyout Menu (صفحه کشویی) -->
+
+        <Grid x:Name="FlyoutMenu" 
+             
+              BackgroundColor="white" WidthRequest="160"
+              HeightRequest="800"
+              Margin="-200,0,0,0"
+              IsVisible="False"
+              TranslationX="-100">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                   
+                    BackgroundColor="White"
+                    CornerRadius="40"
+                    WidthRequest="140"
+                    HeightRequest="40"
+                    Margin="-40,-100,0,0"
+                    Scale="1.5"
+                    ImageSource="Resources/Images/flyout.png"/>
+
+
+                <Button 
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        BackgroundColor="White"
+                        CornerRadius="40"
+                        WidthRequest="140"
+                        HeightRequest="40"
+                        Margin="-50,-300,0,0"
+                        Clicked="ProfileImageClicked" 
+                        ImageSource="Resources/Images/prooo.png"
+                        Scale="1.5"/>
+                <Button 
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    CornerRadius="40"
+                    WidthRequest="140"
+                    HeightRequest="40"
+                    Margin="-50,-500,0,0"
+                    ImageSource="Resources/Images/tasls.png"
+                    Clicked="TasksImageClicked"
+                    Scale="1.5"/>
+
+                <Button 
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    CornerRadius="40"
+                    WidthRequest="140"
+                    HeightRequest="40"
+                    Margin="-50,-700,0,0"
+                    Clicked="GroupsImageClicked"
+                    ImageSource="Resources/Images/groups.png"
+                    Scale="1.5"/>
+
+                <Button 
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    CornerRadius="40"
+                    WidthRequest="140"
+                    HeightRequest="40"
+                    Margin="-50,-900,0,0"
+                   
+                    ImageSource="Resources/Images/massage.png"
+                    Scale="1.5"/>
+                <Button
+                    
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="Profile"
+                    BackgroundColor="#FFCCFF"
+                    FontSize="12" 
+                    CornerRadius="35"
+                    WidthRequest="80"
+                    HeightRequest="40"
+                    Margin="-70,-300,0,0"
+                    Clicked="ProfileClicked"/>
+                <Button 
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="Tasks" 
+                    FontSize="12" 
+                    CornerRadius="35"
+                    WidthRequest="80"
+                    HeightRequest="40"
+                    Margin="-70,-500,0,0"
+                    BackgroundColor="#FFCCFF"
+                    Clicked="TasksClicked" />
+                <Button 
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="Groups" 
+                   FontSize="12" 
+                   CornerRadius="35"
+                   WidthRequest="80"
+                   HeightRequest="40"
+                   Margin="-70,-700,0,0"
+                    BackgroundColor="#FFCCFF"
+                    Clicked="GroupsClicked" />
+                <Button 
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Text="Massagess" 
+                   FontSize="12" 
+                   CornerRadius="35"
+                   WidthRequest="80"
+                   HeightRequest="40"
+                   Margin="-70,-900,0,0"
+                    BackgroundColor="#FFCCFF"
+                    />
+
+
+
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

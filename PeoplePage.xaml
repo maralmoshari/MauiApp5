@@ -1,19 +1,37 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="MauiApp5.PeoplePage" 
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="MauiApp5.PeoplePage"  
              Title="PeoplePage">
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="250" />
             <RowDefinition Height="370" />
         </Grid.RowDefinitions>
 
+        <!-- Search Filters -->
+        <SearchBar Grid.Row="0" Placeholder="Search by Username"  
+                   TextChanged="OnSearchBarTextChanged" />
+        <!-- Sorting Picker -->
+        <Picker    Margin="250,10,0,0" Grid.Row="0" Title="Sort By" SelectedIndexChanged="OnSortOptionChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Username</x:String>
+                    <x:String>First Name</x:String>
+                    <x:String>Job Title</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
         <!-- CollectionView -->
-        <CollectionView ItemsSource="{Binding Members}" 
-                        SelectedItem="{Binding SelectedUser}" 
-                        Grid.Row="1" 
-                        SelectionMode="Single" 
+        <CollectionView ItemsSource="{Binding FilteredMembers}"  
+                        SelectedItem="{Binding SelectedUser}"  
+                        Grid.Row="5"  
+                        SelectionMode="Single"  
                         SelectionChanged="OnMemberSelected">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -22,12 +40,12 @@
                         <SwipeView.LeftItems>
                             <SwipeItems>
                                 <!-- Define swipe actions -->
-                                <SwipeItem Text="Delete" 
-                                           BackgroundColor="Red" 
-                                           Command="{Binding DeleteCommand}" />
-                                <SwipeItem Text="Update" 
-                                           BackgroundColor="Blue" 
-                                           Command="{Binding UpdateCommand}" />
+                                <SwipeItem Text="Delete"  
+                                            BackgroundColor="#E5CCFF"  
+                                            Command="{Binding DeleteCommand}" />
+                                <SwipeItem Text="Update"  
+                                            BackgroundColor="#FFCCFF"  
+                                            Command="{Binding UpdateCommand}" />
                             </SwipeItems>
                         </SwipeView.LeftItems>
 
@@ -44,23 +62,23 @@
                                 </Grid.ColumnDefinitions>
 
                                 <!-- User Image -->
-                                <Image Grid.RowSpan="2" 
-                                       BackgroundColor="White" 
-                                       Source="{Binding ImageSource}" 
-                                       Aspect="AspectFill" 
-                                       HeightRequest="60" 
+                                <Image Grid.RowSpan="2"  
+                                       BackgroundColor="White"  
+                                       Source="{Binding ImageSource}"  
+                                       Aspect="AspectFill"  
+                                       HeightRequest="60"  
                                        WidthRequest="60" />
                                 <!-- Username Label -->
-                                <Label Grid.Column="1" 
+                                <Label Grid.Column="1"  
                                        TextColor="Black" 
-                                       Text="{Binding Username}" 
+                                       Text="{Binding Username}"  
                                        FontAttributes="Bold" />
                                 <!-- Description Label -->
-                                <Label Grid.Row="1" 
-                                       Grid.Column="1" 
-                                       TextColor="Black" 
-                                       Text="{Binding Description}" 
-                                       FontAttributes="Italic" 
+                                <Label Grid.Row="1"  
+                                       Grid.Column="1"  
+                                       TextColor="Black"  
+                                       Text="{Binding Description}"
+                                       FontAttributes="Italic"  
                                        VerticalOptions="End" />
                             </Grid>
                         </Frame>
@@ -70,27 +88,28 @@
         </CollectionView>
 
         <!-- Group Button -->
-        <Button Grid.Row="0" 
-                Text="Group" 
-                BackgroundColor="#FFCCE5" 
-                TextColor="Black" 
-                FontSize="Large" 
-                CornerRadius="15" 
-                WidthRequest="350" 
-                HeightRequest="100" 
-                Margin="0, 0, 0, 25" 
+        <Button Grid.Row="4"  
+                Text="Group"  
+                BackgroundColor="#FFCCE5"  
+                TextColor="Black"  
+                FontSize="Large"  
+                CornerRadius="15"  
+                WidthRequest="350"  
+                HeightRequest="100"  
+                Margin="0, 0, 0, 50"  
                 Clicked="GgroupButton" />
+
         <!-- Add New User Button -->
-        <Button Grid.Row="2" 
-                Text="+"
+        <Button Grid.Row="6"  
+                Text="+"  
                 BackgroundColor="#FFCCE5" 
-                TextColor="#ffffff" 
-                FontSize="20" 
-                HorizontalOptions="Center" 
-                CornerRadius="20" 
-                WidthRequest="50" 
-                HeightRequest="50" 
-                Margin="0,0,-320,-500" 
+                TextColor="#ffffff"  
+                FontSize="20"  
+                HorizontalOptions="Center"  
+                CornerRadius="20"  
+                WidthRequest="50"  
+                HeightRequest="50"  
+                Margin="0,0,-320,-460"  
                 Clicked="Addnewuser" />
     </Grid>
 

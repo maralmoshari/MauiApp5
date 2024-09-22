@@ -44,7 +44,7 @@
             Margin="0, 0, 30, 0"
             HorizontalOptions="End"
             
-            ImageSource="Resources\Images\View.png"
+            ImageSource="Resources\Images\eye.png"
             
             Clicked="PasswordShow"/>
 

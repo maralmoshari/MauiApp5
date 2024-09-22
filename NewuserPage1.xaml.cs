@@ -1,4 +1,5 @@
 using CommunityToolkit.Maui.Views;
+using Microsoft.Maui.Storage;
 
 namespace MauiApp5;
 
@@ -11,18 +12,26 @@ public partial class NewuserPage1 : ContentPage
 
     private void ChooseGroup(object sender, EventArgs e)
     {
-       var popup = new GroupPopupPage();
+       var popup = new NUGroupPopup();
         this.ShowPopup(popup);
 
     }
     private void ChooseDomain(object sender, EventArgs e)
     {
-         var popup = new DomainPopup();
+         var popup = new NUDomainPopup();
         this.ShowPopup(popup);
 
     }
     private void AddNewUser(object sender , EventArgs e)
     {
         Navigation.PopAsync();
+    }
+    private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (RolePicker.SelectedIndex != -1)
+        {
+            string selectedRole = RolePicker.Items[RolePicker.SelectedIndex];
+            SelectedRoleLabel.Text = $"Selected Role: {selectedRole}";
+        }
     }
 }

@@ -40,6 +40,6 @@ public partial class DomainsSubPage : ContentPage
 
     private void AddSubDomain(object sender, EventArgs e)
     {
-        this.ShowPopup(new DomainPopup());
+        Navigation.PushAsync(new NewDomainPage());
     }
 }

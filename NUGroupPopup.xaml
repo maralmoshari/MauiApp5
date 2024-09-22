@@ -1,0 +1,65 @@
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit" 
+               x:Class="MauiApp5.NUGroupPopup">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="500" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <CollectionView ItemsSource="{Binding Groups}" 
+                        SelectedItem="{Binding SelectedGroup}" 
+                        HeightRequest="400" 
+                        Grid.Row="0" 
+                        SelectionMode="Multiple" 
+                        SelectionChanged="OnGroupSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="0" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Switch added -->
+                            <Switch  Margin="300,0,0,0" Grid.Row="0" Grid.Column="15" 
+                                IsToggled="{Binding IsToggled}" OnColor="#ffcce5" ThumbColor="#CCFFFF"/>
+
+                            <Label Grid.Column="1" 
+                               TextColor="Black" 
+                               Text="{Binding Groupname}" 
+                               FontAttributes="Bold" />
+                            <Label Grid.Row="1" 
+                               Grid.Column="1" 
+                               TextColor="Black" 
+                               Text="{Binding Description}"  
+                               FontAttributes="Italic" 
+                               VerticalOptions="End" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Adjusted Image placement -->
+        <Image 
+            Grid.Row="1" 
+            Source="Resources/Images/teck.png" 
+            WidthRequest="30" 
+            HeightRequest="30" 
+            HorizontalOptions="CenterAndExpand" 
+            Margin="0,-40,0,40">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ChooseGroup"/>
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
+</toolkit:Popup>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+    <toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiApp5.NUDomainPopup">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <CollectionView ItemsSource="{Binding Domains}"
+                        SelectedItem="{Binding SelectedDomain}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnDomainSelect"
+                        HeightRequest="400"
+                        Grid.Row="0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0"
+                                   TextColor="Black"
+                                   Text="{Binding Title}"
+                                   FontAttributes="Bold" />
+                                    <Label Grid.Row="1"
+                                   Grid.Column="0"
+                                   TextColor="Black"
+                                   Text="{Binding Description}"
+                                   FontAttributes="Italic"
+                                   VerticalOptions="End" />
+                                </Grid>
+                            </Frame>
+                            <Grid IsVisible="{Binding isFramVisible}">
+                            <Frame BorderColor="#FFCCE5"
+                                   BackgroundColor="White"
+                                   WidthRequest="200"
+                                   HeightRequest="60"
+                                       Margin="0,0,100,0"
+                                   CornerRadius="20">
+                                <Label Text="Admin could Add Task" FontSize="10" HorizontalOptions="Start"  />
+                                </Frame>
+                                <Switch Margin="10,0,80,0"  
+                                    IsToggled="{Binding IsToggled}" 
+                                    OnColor="#FFCCE5" 
+                                       
+                                    ThumbColor="#FFCCE5"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Image Grid.Row="1"
+               Source="Resources/Images/teck.png"
+               WidthRequest="30"
+               HeightRequest="30"
+               HorizontalOptions="Center"
+               Margin="0,-40,0,40">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ChooseDomain"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </toolkit:Popup>

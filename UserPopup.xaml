@@ -18,35 +18,36 @@
 
             <CollectionView.ItemTemplate >
                 <DataTemplate>
-
-                    <Grid Padding="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.RowSpan="2"
+                        <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2"
                                BackgroundColor="White"
                                Source="{Binding ImageSource}"
                                Aspect="AspectFill"
                                HeightRequest="60"
                                WidthRequest="60" />
-                        <Label Grid.Column="1"
+                                <Label Grid.Column="1"
                                TextColor="Black"
                                Text="{Binding Username}"
                                FontAttributes="Bold" />
-                        <Label Grid.Row="1"
+                                <Label Grid.Row="1"
                                Grid.Column="1"
                                TextColor="Black"
                                Text="{Binding Description}"
                                FontAttributes="Italic"
                                VerticalOptions="End" />
-                    </Grid>
+                            </Grid>
+                        </Frame>
 
-                </DataTemplate>
+                    </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
     </Grid>
