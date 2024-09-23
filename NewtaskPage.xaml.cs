@@ -65,5 +65,11 @@ public partial class NewtaskPage : ContentPage
         Navigation.PopAsync();
 
     }
+    private void DescriptionButton(object sender, EventArgs e)
+    {
+
+        this.ShowPopup(new DescriptionPopup()); 
+
+    }
 
 }

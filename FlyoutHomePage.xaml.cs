@@ -30,35 +30,37 @@ namespace MauiApp5
         }
         private void ProfileClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ProfilePage());
+            Navigation.PushAsync(new UserProfilePage());
         }
 
         private void ProfileImageClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ProfilePage());
+            Navigation.PushAsync(new UserProfilePage());
         }
         private void TasksImageClicked(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new ProfilePage());
+            Navigation.PushAsync(new UserTaskPage());
         }
 
         private void TasksClicked(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new TaskPage());
+            Navigation.PushAsync(new UserTaskPage());
         }
         private void GroupsImageClicked(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new GroupPage());
+            Navigation.PushAsync(new UserGroupPage());
         }
 
         private void GroupsClicked(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new GroupPage());
+            Navigation.PushAsync(new UserGroupPage());
         }
+
+        //hoooome page
         private void peopleButton(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PeoplePage()); ;
@@ -76,7 +78,7 @@ namespace MauiApp5
 
         }
 
-
+ //hideeeeeeeeeeee
         private async void HideFlyout()
         {
             // CLOSE MENU AFTER CLICK TO BUTTON

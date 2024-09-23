@@ -59,7 +59,7 @@
 
                 <Label x:Name="SelectedRoleLabel"
                FontSize="Medium"
-               Text="Selected Role:" 
+               Text="Job Title : " 
                        TextColor="White"/>
                 </Grid>
             </Frame>
@@ -105,23 +105,20 @@
                  HorizontalTextAlignment="Center"
                     />
         </Frame>
-        <Frame
-            BorderColor="White"
-            BackgroundColor="#CCFFFF"
-            WidthRequest="300"
-            HeightRequest="100"
-            CornerRadius="40">
-            <Entry
-                x:Name="UserDescription"
-                Placeholder=" User Description"
-                PlaceholderColor="#FFFFFF"
-                FontSize="30"
-                HorizontalTextAlignment="Center"
-            />
-        </Frame>
+            <Button 
+
+            Text="Description" 
+            BackgroundColor="#E5CCFF" 
+            TextColor="White" 
+            FontSize="30" 
+            CornerRadius="40" 
+            WidthRequest="300" 
+            HeightRequest="100" 
+            Margin="0, 10, 0, 20" 
+            Clicked="DescriptionButton"/>
 
 
-        <Button
+            <Button
             Text="Group"
             BackgroundColor="#CCFFE5"
             TextColor="White"

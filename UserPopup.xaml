@@ -5,11 +5,11 @@
     <StackLayout>
 
         <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="500" />
-            <RowDefinition Height="50" />
-        </Grid.RowDefinitions>
-        <CollectionView ItemsSource="{Binding Members}"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <CollectionView ItemsSource="{Binding Members}"
                         SelectedItem="{Binding SelectedUser}"
                         HeightRequest="400"
                         Grid.Row="0"
@@ -28,6 +28,11 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
+
+                                <!-- Switch added -->
+                                <Switch  Margin="240,0,0,0" Grid.Row="0" Grid.Column="15" 
+                                IsToggled="{Binding IsToggled}" OnColor="#ffcce5" ThumbColor="#CCFFFF"/>
+
                                 <Image Grid.RowSpan="2"
                                BackgroundColor="White"
                                Source="{Binding ImageSource}"

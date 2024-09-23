@@ -34,21 +34,16 @@
             HeightRequest="100"
             Margin="0, 10, 0, 20"
             Clicked="ChooseDomain"/>
-        <Frame
-            BorderColor="White"
-            BackgroundColor="#FFCCE5"
-            WidthRequest="300"
-            HeightRequest="100"
-            CornerRadius="40"
-            Margin="0,-10,0,0">
-        <Entry
-                x:Name="GroupDescription"
-                Placeholder=" description"
-                PlaceholderColor="#FFFFFF"
-                FontSize="30"
-                HorizontalTextAlignment="Center"
-                />
-        </Frame>
+        <Button 
+            Text="Description" 
+            BackgroundColor="#E5CCFF" 
+            TextColor="White" 
+            FontSize="30" 
+            CornerRadius="40" 
+            WidthRequest="300" 
+            HeightRequest="100" 
+            Margin="0, 10, 0, 20" 
+            Clicked="DescriptionButton"/>
            
 
         <Button

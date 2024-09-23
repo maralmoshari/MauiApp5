@@ -27,6 +27,13 @@ public partial class NewDomainPage : ContentPage
         Navigation.PushAsync(new DomainPage()); ;
 
     }
+    private void DescriptionButton(object sender, EventArgs e)
+    {
+
+       this.ShowPopup(new DescriptionPopup()); ;
+
+    }
+    
 
 
 }

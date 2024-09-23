@@ -5,17 +5,17 @@
                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="MauiApp5.NUDomainPopup">
 
-        <Grid>
+        <Grid HeightRequest="650">
             <Grid.RowDefinitions>
-                <RowDefinition Height="500" />
-                <RowDefinition Height="50" />
+                <RowDefinition Height="570" />
+                <RowDefinition Height="30" />
             </Grid.RowDefinitions>
 
             <CollectionView ItemsSource="{Binding Domains}"
                         SelectedItem="{Binding SelectedDomain}"
                         SelectionMode="Single"
                         SelectionChanged="OnDomainSelect"
-                        HeightRequest="400"
+                        HeightRequest="570"
                         Grid.Row="0">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -43,8 +43,18 @@
                                    VerticalOptions="End" />
                                 </Grid>
                             </Frame>
-                            <Grid IsVisible="{Binding isFramVisible}">
-                            <Frame BorderColor="#FFCCE5"
+                            
+                            <!--boxxxxxxxxx-->
+                            <Grid IsVisible="{Binding isFramVisible}" HeightRequest="240">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" HeightRequest="65" BackgroundColor="White">
+                                <Frame BorderColor="#FFCCE5"
                                    BackgroundColor="White"
                                    WidthRequest="200"
                                    HeightRequest="60"
@@ -52,12 +62,51 @@
                                    CornerRadius="20">
                                 <Label Text="Admin could Add Task" FontSize="10" HorizontalOptions="Start"  />
                                 </Frame>
-                                <Switch Margin="10,0,80,0"  
+                                <Switch 
                                     IsToggled="{Binding IsToggled}" 
                                     OnColor="#FFCCE5" 
-                                       
                                     ThumbColor="#FFCCE5"/>
                             </Grid>
+                            <Grid Grid.Row="1" HeightRequest="65" BackgroundColor="White">
+                                <Frame BorderColor="#FFCCE5"
+                                   BackgroundColor="White"
+                                   WidthRequest="200"
+                                   HeightRequest="60"
+                                       Margin="0,0,100,0"
+                                   CornerRadius="20">
+                                    <Label Text="Admin could Add group" FontSize="10" HorizontalOptions="Start"  />
+                                </Frame>
+                                <Switch 
+                                    IsToggled="{Binding IsToggled}" 
+                                    OnColor="#FFCCE5" 
+                                    ThumbColor="#FFCCE5"/>
+                            </Grid>
+                            <Grid Grid.Row="2" HeightRequest="65" BackgroundColor="White">
+                                <Frame BorderColor="#FFCCE5"
+                                   BackgroundColor="White"
+                                   WidthRequest="200"
+                                   HeightRequest="60"
+                                       Margin="0,0,100,0"
+                                   CornerRadius="20">
+                                    <Label Text="Admin could update/deelet" FontSize="10" HorizontalOptions="Start"  />
+                                </Frame>
+                                <Switch 
+                                    IsToggled="{Binding IsToggled}" 
+                                    OnColor="#FFCCE5" 
+                                    ThumbColor="#FFCCE5"/>
+                            </Grid>
+                            <Button
+                                
+                                Grid.Row="3"
+                                Text="ok"
+                                BackgroundColor="#E5CCFF"
+                                TextColor="White"
+                                FontSize="10"
+                                CornerRadius="40"
+                                WidthRequest="40"
+                                HeightRequest="40"                  
+                                Clicked="AddAdminSecure"/>
+                        </Grid>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
@@ -68,7 +117,7 @@
                WidthRequest="30"
                HeightRequest="30"
                HorizontalOptions="Center"
-               Margin="0,-40,0,40">
+               Margin="0,50,0,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="ChooseDomain"/>
                 </Image.GestureRecognizers>

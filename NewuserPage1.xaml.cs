@@ -34,4 +34,10 @@ public partial class NewuserPage1 : ContentPage
             SelectedRoleLabel.Text = $"Selected Role: {selectedRole}";
         }
     }
+    private void DescriptionButton(object sender, EventArgs e)
+    {
+
+        Navigation.PushAsync(new DomainPage()); ;
+
+    }
 }

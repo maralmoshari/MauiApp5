@@ -8,8 +8,8 @@ public partial class NUDomainPopup : Popup
     public ObservableCollection<Domain> Domains { get; set; } // Using ObservableCollection for automatic updates
 
     public NUDomainPopup()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
         Domains = new ObservableCollection<Domain>();
 
@@ -49,5 +49,21 @@ public partial class NUDomainPopup : Popup
     private void ChooseDomain(object sender, EventArgs e)
     {
         Close();
+    }
+    private void AddAdminSecure(object sender, EventArgs e)
+    {
+       /// if (e.CurrentSelection.Count > 0)
+       /// {
+       ///     object sender, SelectionChangedEventArgs e
+       ///     // تغییر وضعیت IsEntryVisible
+       ///     selectedDomain.isFramVisible = !selectedDomain.isFramVisible;
+       ///
+       ///
+       ///
+       ///     // به‌روزرسانی نمایش
+       ///     OnPropertyChanged(nameof(Domains));
+       ///
+       ///
+       /// }
     }
 }

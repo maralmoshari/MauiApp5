@@ -27,4 +27,10 @@ public partial class NewGroupPage : ContentPage
     {
         Navigation.PopAsync();
     }
+    private void DescriptionButton(object sender, EventArgs e)
+    {
+
+        this.ShowPopup(new DescriptionPopup()); ;
+
+    }
 }

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.UserProfilePage"
+             Title="ProfilePage">
+    <ScrollView>
+        <Grid RowDefinitions="*,*">
+
+        <StackLayout>
+            <Image
+            Source="Resources/Images/account.png"
+            WidthRequest="150"
+            Margin="0, 20, 0, 60"/>
+            <Button
+            Text="Edit"
+            BackgroundColor="#FFCCE5"
+            TextColor="White"
+            FontSize="20"
+            CornerRadius="40"
+            WidthRequest="200"
+            HeightRequest="50"
+            Margin="0, 0, 0, 0"
+            Clicked="editButton"/>
+            <Frame
+             BorderColor="White"
+             BackgroundColor="#FFCCE5"
+             WidthRequest="350"
+             CornerRadius="20">
+                <Label Text="{Binding Username}" FontSize="24" HorizontalOptions="Center" />
+
+
+            </Frame>
+
+
+            <Frame
+                 BorderColor="White"
+                 BackgroundColor="#FFCCE5"
+                 WidthRequest="350"
+                 CornerRadius="20">
+                <Label Text="{Binding JobTitle}" FontSize="24"  HorizontalOptions="Center" />
+
+
+            </Frame>
+
+            <Frame
+                     BorderColor="White"
+                     BackgroundColor="#FFCCE5"
+                     WidthRequest="350"
+                     CornerRadius="20">
+                <Label Text="{Binding PhoneNumber}" FontSize="24"  HorizontalOptions="Center" />
+
+
+            </Frame>
+                <Frame
+                         BorderColor="White"
+                         BackgroundColor="#FFCCE5"
+                         WidthRequest="350"
+                         CornerRadius="20">
+                    <Label Text="{Binding Description}" FontSize="24"  HorizontalOptions="Center" />
+
+
+
+                </Frame>
+
+            </StackLayout>
+
+
+        <!-- task -->
+        <StackLayout Grid.Row="1">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="500"   />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <CollectionView ItemsSource="{Binding Tasks}"
+                        SelectedItem="{Binding SelectedTask}" 
+                        SelectionMode="Single" 
+                        SelectionChanged="OnTaskSelected" 
+                        HeightRequest="400"
+                        WidthRequest="340"
+                                Margin="0,80,0,0"
+                                BackgroundColor="#CCFFFF"
+
+                        Grid.Row="0">
+                    <CollectionView.ItemTemplate>
+
+                        <DataTemplate >
+                            <SwipeView>
+                                <SwipeView.LeftItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Delete"  
+                                            BackgroundColor="#E5CCFF"  
+                                            Command="{Binding DeleteCommand}" />
+                                        <SwipeItem Text="Update"  
+                                            BackgroundColor="#FFCCFF"  
+                                            Command="{Binding UpdateCommand}" />
+
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>
+                                <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="White">
+                                    <Grid Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="1"
+                                       TextColor="Black"
+                                       Text="{Binding Title}"
+                                       FontAttributes="Bold" />
+                                        <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       TextColor="Black"
+                                       Text="{Binding Description}"
+                                       FontAttributes="Italic"
+                                       VerticalOptions="End" />
+                                    </Grid>
+                                </Frame>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+        </StackLayout>
+
+
+
+    </Grid>
+    </ScrollView>
+</ContentPage>
