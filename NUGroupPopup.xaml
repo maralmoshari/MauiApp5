@@ -29,8 +29,8 @@
                             </Grid.ColumnDefinitions>
 
                             <!-- Switch added -->
-                            <Switch  Margin="300,0,0,0" Grid.Row="0" Grid.Column="15" 
-                                IsToggled="{Binding IsToggled}" OnColor="#ffcce5" ThumbColor="#CCFFFF"/>
+                            <CheckBox x:Name="checkbox"  Margin="300,0,0,0" Grid.Row="0" Grid.Column="15" 
+                                IsChecked="{Binding IsChecked}"  CheckedChanged="OnCheckBoxCheckedChanged" Color="#ffcce5" />
 
                             <Label Grid.Column="1" 
                                TextColor="Black" 

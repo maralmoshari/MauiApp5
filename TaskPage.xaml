@@ -9,8 +9,26 @@
             <RowDefinition Height="500"   />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <CollectionView ItemsSource="{Binding Tasks}"
+        <!-- Search Bar for filtering -->
+        <SearchBar Grid.Row="0" Placeholder="Search Tasks" 
+                   TextChanged="OnTaskPageSearchTextChanged" />
+
+        <!-- Sorting Picker -->
+        <Picker Grid.Row="0" Margin="51,51,0,0" Title="Sort By" 
+                SelectedIndexChanged="OnTaskPageSortOptionChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Title</x:String>
+                    <x:String>Description</x:String>
+                    <x:String>Priority</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- CollectionView for displaying tasks -->
+        <CollectionView ItemsSource="{Binding FilteredTasks}"
                         SelectedItem="{Binding SelectedTask}"
+                        Margin="0,90,0,0"
                         SelectionMode="Single"
                         SelectionChanged="OnTaskSelected"
                         HeightRequest="400"

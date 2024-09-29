@@ -15,7 +15,7 @@ public partial class NewDomainPage : ContentPage
 
 
     }
-    private void AdddMember(object sender, EventArgs e)
+    private void AdddAdmin(object sender, EventArgs e)
     {
 
         this.ShowPopup(new UserPopup());

@@ -8,10 +8,7 @@ namespace MauiApp5
             InitializeComponent();
             BindingContext = selectedMember;
         }
-        private void ProfileButton(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new ProfilePage());
-        }
+
 
     }
 }

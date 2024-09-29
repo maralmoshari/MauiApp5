@@ -20,8 +20,9 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
-                                <Grid Padding="10">
+                        <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
+                        
+                            <Grid Padding="10">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />

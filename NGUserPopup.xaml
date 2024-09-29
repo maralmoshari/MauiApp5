@@ -1,7 +1,7 @@
 <toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-               x:Class="MauiApp5.UserPopup">
+               x:Class="MauiApp5.NGUserPopup">
     <StackLayout>
 
         <Grid>
@@ -16,8 +16,8 @@
                         SelectionMode="Multiple"
                         SelectionChanged="OnMemberSelected">
 
-            <CollectionView.ItemTemplate >
-                <DataTemplate>
+                <CollectionView.ItemTemplate >
+                    <DataTemplate>
                         <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
                             <Grid Padding="10">
                                 <Grid.RowDefinitions>
@@ -30,8 +30,8 @@
                                 </Grid.ColumnDefinitions>
 
                                 <!-- Switch added -->
-                                <!--<Switch  Margin="240,0,0,0" Grid.Row="0" Grid.Column="15" 
-                                IsToggled="{Binding IsToggled}" OnColor="#ffcce5" ThumbColor="#CCFFFF"/>-->
+                                <CheckBox x:Name="checkbox" Margin="240,0,0,0" Grid.Column="15" Grid.Row="0"
+                                IsChecked="{Binding IsChecked}"  CheckedChanged="OnCheckBoxCheckedChanged" Color="#ffcce5" />
 
                                 <Image Grid.RowSpan="2"
                                BackgroundColor="White"
@@ -53,12 +53,12 @@
                         </Frame>
 
                     </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </Grid>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
 
 
-    <Image
+        <Image
             Grid.Row="6"
             Grid.Column="1"
          
@@ -68,10 +68,10 @@
             HorizontalOptions="EndAndExpand"
             Margin="0,-30,5,5">
 
-        <Image.GestureRecognizers>
-            <TapGestureRecognizer Tapped="Chooseuser"/>
-        </Image.GestureRecognizers>
-    </Image>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Chooseuser"/>
+            </Image.GestureRecognizers>
+        </Image>
     </StackLayout>
 
 </toolkit:Popup>

@@ -2,8 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
              x:Class="MauiApp5.PeoplePage"  
              Title="PeoplePage">
+    <ScrollView>
 
-    <Grid>
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -12,12 +13,23 @@
             <RowDefinition Height="250" />
             <RowDefinition Height="370" />
         </Grid.RowDefinitions>
-
-        <!-- Search Filters -->
-        <SearchBar Grid.Row="0" Placeholder="Search by Username"  
-                   TextChanged="OnSearchBarTextChanged" />
+            <!-- Group Button -->
+            <Button Grid.Row="0"  
+                Text="Group"  
+                BackgroundColor="#FFCCE5"  
+                TextColor="Black"  
+                FontSize="Large"  
+                CornerRadius="15"  
+                WidthRequest="350"  
+                HeightRequest="100"  
+                Margin="0, 30, 0, 30"  
+                Clicked="GgroupButton" />
+            <!-- Search Filters -->
+        <SearchBar WidthRequest="200" HorizontalOptions="StartAndExpand"
+           Grid.Row="1" Placeholder="Search by Username" 
+        TextChanged="OnSearchBarTextChanged" />
         <!-- Sorting Picker -->
-        <Picker    Margin="250,10,0,0" Grid.Row="0" Title="Sort By" SelectedIndexChanged="OnSortOptionChanged">
+            <Picker  Grid.Row="1"  Title="Sort By" SelectedIndexChanged="OnSortOptionChanged" WidthRequest="180" HorizontalOptions="EndAndExpand">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Username</x:String>
@@ -30,9 +42,11 @@
         <!-- CollectionView -->
         <CollectionView ItemsSource="{Binding FilteredMembers}"  
                         SelectedItem="{Binding SelectedUser}"  
-                        Grid.Row="5"  
+                        Grid.Row="4"  
                         SelectionMode="Single"  
-                        SelectionChanged="OnMemberSelected">
+                        SelectionChanged="OnMemberSelected"
+                        Margin="0,180,0,0" 
+                        HeightRequest="400">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <!-- SwipeView wrapping the content -->
@@ -87,20 +101,9 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <!-- Group Button -->
-        <Button Grid.Row="4"  
-                Text="Group"  
-                BackgroundColor="#FFCCE5"  
-                TextColor="Black"  
-                FontSize="Large"  
-                CornerRadius="15"  
-                WidthRequest="350"  
-                HeightRequest="100"  
-                Margin="0, 0, 0, 50"  
-                Clicked="GgroupButton" />
 
         <!-- Add New User Button -->
-        <Button Grid.Row="6"  
+        <Button Grid.Row="5"  
                 Text="+"  
                 BackgroundColor="#FFCCE5" 
                 TextColor="#ffffff"  
@@ -109,8 +112,8 @@
                 CornerRadius="20"  
                 WidthRequest="50"  
                 HeightRequest="50"  
-                Margin="0,0,-320,-460"  
+                  Margin="0,50,0,0"
                 Clicked="Addnewuser" />
     </Grid>
-
+    </ScrollView>
 </ContentPage>

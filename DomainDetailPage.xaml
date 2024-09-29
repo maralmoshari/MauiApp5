@@ -14,11 +14,27 @@
                     <RowDefinition Height="500" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
+                    <!--searchhhh-->
+                    <SearchBar Grid.Row="0" Placeholder="Search by GroupName"  
+                   TextChanged="OnSearchBarTextChanged" WidthRequest="200" HorizontalOptions="StartAndExpand" Margin="0,30,0,0"/>
+                    <!-- Sorting Picker -->
+                    <Picker WidthRequest="180" HorizontalOptions="EndAndExpand" Grid.Row="0" Title="Sort By"  Margin="0,30,0,0"
+                SelectedIndexChanged="OnSortOptionChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Group Name</x:String>
+                                <x:String>Job Title</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
 
-                <CollectionView ItemsSource="{Binding Groups}"
+
+                    <CollectionView ItemsSource="{Binding Groups}"
                         SelectedItem="{Binding SelectedDomainGroup}"
                         HeightRequest="400"
+                                x:Name="GroupCollectionView"
                         Grid.Row="0"
+                                    Margin="0,40,0,0"
                         SelectionMode="Single"
                         SelectionChanged="OnDomainGroupSelected">
                     <CollectionView.ItemTemplate>
@@ -80,15 +96,30 @@
 
             </Grid>
         </StackLayout>
-        <StackLayout Grid.Row="1" Margin="0,-40,0,0">
+            <!--taskkkk-->
+        <StackLayout Grid.Row="1" Margin="0,0,0,0">
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200"   />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-                <CollectionView ItemsSource="{Binding Tasks}"
+                    <SearchBar Grid.Row="0" Placeholder="Search by TaskName"   Margin="0,0,0,0"
+                   TextChanged="OnSearchBarTask" WidthRequest="200" HorizontalOptions="StartAndExpand" />
+                    <!-- Sorting Picker -->
+                    <Picker  Grid.Row="0" Title="Sort By"  Margin="0,0,0,0"
+                SelectedIndexChanged="OnSortOptionTask" WidthRequest="180" HorizontalOptions="EndAndExpand">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Task Name</x:String>
+                                <x:String>Complite</x:String>
+                                <x:String>Not Complite</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <CollectionView ItemsSource="{Binding Tasks}"
                         SelectedItem="{Binding SelectedDomainTask}"
                         SelectionMode="Single"
+                                    x:Name="TaskCollectionView"
                         SelectionChanged="OnDomainTaskSelected"
                         HeightRequest="400"
                         Grid.Row="0" Margin="0,300,0,0">

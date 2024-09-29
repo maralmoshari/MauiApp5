@@ -16,12 +16,7 @@ public partial class NewuserPage1 : ContentPage
         this.ShowPopup(popup);
 
     }
-    private void ChooseDomain(object sender, EventArgs e)
-    {
-         var popup = new NUDomainPopup();
-        this.ShowPopup(popup);
 
-    }
     private void AddNewUser(object sender , EventArgs e)
     {
         Navigation.PopAsync();
@@ -37,7 +32,7 @@ public partial class NewuserPage1 : ContentPage
     private void DescriptionButton(object sender, EventArgs e)
     {
 
-        Navigation.PushAsync(new DomainPage()); ;
+        this.ShowPopup(new DescriptionPopup());
 
     }
 }

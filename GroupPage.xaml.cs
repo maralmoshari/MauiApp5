@@ -9,7 +9,7 @@ public partial class GroupPage : ContentPage
     public ObservableCollection<Group> Groups { get; set; }
     public ObservableCollection<Task> Tasks { get; set; }
     public ObservableCollection<Group> FilteredGroups { get; set; }
-
+    public ObservableCollection<Task> FilteredTask { get; set; }
     public GroupPage()
     {
         InitializeComponent();
@@ -17,6 +17,7 @@ public partial class GroupPage : ContentPage
         Groups = new ObservableCollection<Group>();
         FilteredGroups = new ObservableCollection<Group>();
 
+        
         string Fgroupname = "group1";
         string FDescription = "This is a description.";
 
@@ -30,10 +31,10 @@ public partial class GroupPage : ContentPage
         ///task
 
         Tasks = new ObservableCollection<Task>();
+        FilteredTask = new ObservableCollection<Task>();
 
         string FTtitle = "task 1";
         string FTDescription = "This is a description.";
-
         string FsingToUser = "gisoo";
         string Fmanager = "PEDRAM";
         string FpriviousTask = "TASK 2";
@@ -99,9 +100,8 @@ public partial class GroupPage : ContentPage
 
         var sortedGroups = selectedSortOption switch
         {
-            "Username" => Groups.OrderBy(g => g.Groupname).ToList(),
-            "First Name" => Groups.OrderBy(g => g.Description).ToList(), // Adjust based on actual properties
-            "Job Title" => Groups.OrderBy(g => g.Groupname).ToList(), // Adjust if needed
+            "Group Name" => Groups.OrderBy(g => g.Groupname).ToList(),
+            "Job Title" => Groups.OrderBy(g => g.Groupname).ToList(), 
             _ => Groups.ToList()
         };
 
@@ -112,6 +112,45 @@ public partial class GroupPage : ContentPage
         } 
  
         CollectionView.ItemsSource = FilteredGroups;
+    }
+    //sort search for task
+    private void OnSearchBarTask(object sender, TextChangedEventArgs e)
+    {
+        string searchText = e.NewTextValue?.ToLower() ?? string.Empty;
+
+        FilteredTask.Clear();
+
+        foreach (var task in Tasks)
+        {
+            if (task.Title.ToLower().Contains(searchText) ||
+                task.Description.ToLower().Contains(searchText))
+            {
+                FilteredTask.Add(task);
+            }
+        }
+
+        CollectionView.ItemsSource = FilteredTask;
+    }
+
+    private void OnSortOptionTask(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        var selectedSortOption = picker.SelectedItem.ToString();
+
+        var sortedTask = selectedSortOption switch
+        {
+            "Task Name" => Tasks.OrderBy(t => t.Title).ToList(),
+            "Job Title" => Tasks.OrderBy(t => t.Description).ToList(),
+            _ => Tasks.ToList()
+        };
+
+        FilteredTask.Clear();
+        foreach (var task in sortedTask)
+        {
+            FilteredTask.Add(task);
+        }
+
+        CollectionView.ItemsSource = FilteredTask;
     }
     private void AddTask(object sender, EventArgs e)
     {

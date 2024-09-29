@@ -1,4 +1,4 @@
-using CommunityToolkit.Maui.Views;
+﻿using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
 
 namespace MauiApp5;
@@ -41,5 +41,16 @@ public partial class NUGroupPopup : Popup
         Close();
 
 
+    }
+    private void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        if (e.Value)
+        {
+            // عملیات برای زمانی که CheckBox تیک خورده است
+        }
+        else
+        {
+            // عملیات برای زمانی که CheckBox تیک نخورده است
+        }
     }
 }

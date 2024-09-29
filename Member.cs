@@ -9,6 +9,7 @@ namespace MauiApp5
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Username { get; set; }
+        public string Kodmeli { get; set; }
         public string Description { get; set; }
         public string ImageSource { get; set; }
         public string JobTitle { get; set; }
@@ -34,14 +35,15 @@ namespace MauiApp5
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public Member(string username, string description, string imageSource)
+        public Member(string username, string description, string imageSource , string kodmeli)
         {
             Username = username;
             Description = description;
             ImageSource = imageSource;
+            Kodmeli = kodmeli;
         }
 
-        public Member(string firstname, string lastname, string username, string description, string imageSource, string jobtitle, string phonenumber)
+        public Member(string firstname, string lastname, string username, string description, string imageSource, string jobtitle, string phonenumber , string kodmeli  )
         {
             Username = username;
             Description = description;
@@ -50,6 +52,7 @@ namespace MauiApp5
             PhoneNumber = phonenumber;
             Firstname = firstname;
             Lastname = lastname;
+            Kodmeli = kodmeli;
         }
     }
 }

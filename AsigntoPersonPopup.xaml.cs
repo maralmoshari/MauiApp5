@@ -35,11 +35,12 @@ public partial class AsigntoPersonPopup : Popup
         string ImageSource = "Resources/Images/account.png";
         string Fjobtitle = "manager";
         string Fphonenumber = "0901090827";
+        string Fkodmeli = "0927043187";
 
 
         for (int i = 0; i < MemberCount; i++)
         {
-            Members.Add(new Member(FFname, FLname, FUsername, FUDescription, ImageSource, Fjobtitle, Fphonenumber));
+            Members.Add(new Member(FFname, FLname, FUsername, FUDescription, ImageSource, Fjobtitle, Fphonenumber , Fkodmeli));
         }
 
         BindingContext = this;

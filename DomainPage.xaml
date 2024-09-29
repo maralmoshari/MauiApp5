@@ -7,19 +7,41 @@
 
     <ScrollView>
         <Grid RowDefinitions="*,*">
-        <StackLayout Grid.Row="0">
 
-            <Grid Grid.Row="0">
-                <!-- CollectionView for displaying domains -->
-            <CollectionView ItemsSource="{Binding Domains}" 
+
+            <StackLayout Grid.Row="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="500" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Search Bar for filtering -->
+                    <SearchBar Grid.Row="0" Placeholder="Search Subdomains" 
+                   TextChanged="OnSearchBarTextDomain" />
+
+                    <!-- Sorting Picker -->
+                    <Picker Margin="30,0,0,0" Grid.Row="0" Title="Sort By" HorizontalOptions="EndAndExpand"
+                SelectedIndexChanged="OnSortOptionDomain">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Title</x:String>
+                                <x:String>Description</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <!-- CollectionView for displaying domains -->
+                    <CollectionView ItemsSource="{Binding Domains}" 
                         SelectedItem="{Binding SelectedDomain}" 
                         SelectionMode="Single" 
+                                    Margin="0,-450,0,0"
+                                    x:Name="DomainCollectionView"
                         SelectionChanged="OnDomainSelect" 
                         HeightRequest="500" 
-                        Grid.Row="0">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <!-- SwipeView wrapping the content -->
+                        Grid.Row="1">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <!-- SwipeView wrapping the content -->
                                 <SwipeView>
                                     <SwipeView.LeftItems>
                                         <SwipeItems>
@@ -34,40 +56,40 @@
                                             Command="{Binding AddSubCommand}" />
                                         </SwipeItems>
                                     </SwipeView.LeftItems>
-                        <!-- Main Content inside SwipeView -->
-                        <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
-                            <Grid Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                                    <!-- Main Content inside SwipeView -->
+                                    <Frame Padding="10" BackgroundColor="White" Margin="5" BorderColor="#ffcce5">
+                                        <Grid Padding="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
 
-                                <!-- Title Label -->
-                                <Label Grid.Column="1" 
+                                            <!-- Title Label -->
+                                            <Label Grid.Column="1" 
                                    TextColor="Black" 
                                    Text="{Binding Title}" 
                                    FontAttributes="Bold" />
-                                <!-- Description Label -->
-                                <Label Grid.Row="1" 
+                                            <!-- Description Label -->
+                                            <Label Grid.Row="1" 
                                    Grid.Column="1" 
                                    TextColor="Black" 
                                    Text="{Binding Description}" 
                                    FontAttributes="Italic" 
                                    VerticalOptions="End" />
-                            </Grid>
-                        </Frame>
-                    </SwipeView>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-                
+                                        </Grid>
+                                    </Frame>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
 
-        <!-- Add Button -->
-        <Button Grid.Row="1" 
+
+                    <!-- Add Button -->
+                    <Button Grid.Row="1" 
                 Text="+" 
                 BackgroundColor="#ffcce5" 
                 TextColor="#ffffff" 
@@ -78,13 +100,13 @@
                   WidthRequest="40"
                   HeightRequest="40"
                 Clicked="AddNewDomain"/>
-            </Grid>
+                </Grid>
 
             </StackLayout>
 
-        
-        
-        
+
+
+
             <!-- task -->
         <StackLayout Grid.Row="1">
             <Grid >
@@ -92,13 +114,27 @@
                     <RowDefinition Height="500"   />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-                <CollectionView ItemsSource="{Binding Tasks}"
+                    <SearchBar Grid.Row="0" Placeholder="Search by TaskName"   Margin="0,60,0,0"
+                   TextChanged="OnSearchBarTask" WidthRequest="200" HorizontalOptions="StartAndExpand" />
+                    <!-- Sorting Picker -->
+                    <Picker  Grid.Row="0" Title="Sort By"  Margin="0,60,0,0"
+                SelectedIndexChanged="OnSortOptionTask" WidthRequest="180" HorizontalOptions="EndAndExpand">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Task Name</x:String>
+                                <x:String>Complite</x:String>
+                                <x:String>Not Complite</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <CollectionView ItemsSource="{Binding Tasks}"
+                                    x:Name="TaskCollectionView"
                         SelectedItem="{Binding SelectedTask}" 
                         SelectionMode="Single" 
                         SelectionChanged="OnTaskSelected" 
                         HeightRequest="400"
                         WidthRequest="340"
-                                Margin="0,80,0,0"
+                                Margin="0,160,0,0"
                                 BackgroundColor="#CCFFFF"
 
                         Grid.Row="0">
@@ -151,6 +187,7 @@
                   BackgroundColor="#FFCCE5"
                   TextColor="#ffffff"
                   FontSize="15"
+                    Margin="0,0,0,0"
                   HorizontalOptions="Center"
                   CornerRadius="40"
                   WidthRequest="40"

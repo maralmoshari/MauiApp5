@@ -1,13 +1,13 @@
-using CommunityToolkit.Maui.Views;
+﻿using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
 
 namespace MauiApp5;
 
-public partial class UserPopup : Popup
+public partial class NGUserPopup : Popup
 {
     public ObservableCollection<Member> Members { get; set; }
 
-    public UserPopup()
+    public NGUserPopup()
     {
         InitializeComponent();
         Members = new ObservableCollection<Member>();
@@ -31,14 +31,25 @@ public partial class UserPopup : Popup
     }
     private async void OnMemberSelected(object sender, SelectionChangedEventArgs e)
     {
-       // var selectedMember = e.CurrentSelection.FirstOrDefault() as Member;
-       // if (selectedMember != null)
-       // {
-       //     //await Navigation.PushAsync(new MemberDetailsPage(selectedMember));
-       //     
-       //     // Reset selection to avoid re-triggering the same item
-       //     ((CollectionView)sender).SelectedItem = null;
-       // }
+        // var selectedMember = e.CurrentSelection.FirstOrDefault() as Member;
+        // if (selectedMember != null)
+        // {
+        //     //await Navigation.PushAsync(new MemberDetailsPage(selectedMember));
+        //     
+        //     // Reset selection to avoid re-triggering the same item
+        //     ((CollectionView)sender).SelectedItem = null;
+        // }
+    }
+    private void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        if (e.Value)
+        {
+            // عملیات برای زمانی که CheckBox تیک خورده است
+        }
+        else
+        {
+            // عملیات برای زمانی که CheckBox تیک نخورده است
+        }
     }
     private void Chooseuser(object sender, EventArgs e)
     {

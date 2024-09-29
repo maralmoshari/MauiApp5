@@ -12,7 +12,7 @@ public partial class NewGroupPage : ContentPage
     private void AddMember(object sender, EventArgs e)
     {
 
-        this.ShowPopup(new UserPopup());
+        this.ShowPopup(new NGUserPopup());
 
     }
     private void ChooseDomain(object sender, EventArgs e)

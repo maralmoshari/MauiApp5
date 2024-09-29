@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace MauiApp5;
 
@@ -7,13 +7,14 @@ public partial class TaskPage : ContentPage
 
 
 
-     public ObservableCollection<Task> Tasks { get; set; } // Using ObservableCollection for automatic updates
+    public ObservableCollection<Task> FilteredTasks { get; set; } // لیست فیلتر شده برای نمایش
+    public ObservableCollection<Task> Tasks { get; set; } // Using ObservableCollection for automatic updates
 
         public TaskPage()
         {
             InitializeComponent();
-
-            Tasks = new ObservableCollection<Task>();
+        FilteredTasks = new ObservableCollection<Task>(); // لیست فیلتر شده
+        Tasks = new ObservableCollection<Task>();
 
             string Ftitle = "task 1";
             string FDescription = "This is a description.";
@@ -34,9 +35,13 @@ public partial class TaskPage : ContentPage
             {
                 Tasks.Add(new Task(Ftitle, FDescription, FsingToUser, Fmanager, FpriviousTask, Fdeadline, FnextTask, FcoupleTask, Fpriority));
             }
+             // کپی کردن وظایف به لیست فیلتر شده
+             foreach (var task in Tasks)
+             {
+                 FilteredTasks.Add(task);
+             }
 
-
-            BindingContext = this;
+             BindingContext = this;
 
 
 
@@ -56,5 +61,63 @@ public partial class TaskPage : ContentPage
             Navigation.PushAsync(new NewtaskPage());
 
         }
+
+
+
+
+  //ss
+    private void OnTaskPageSearchTextChanged(object sender, TextChangedEventArgs e)
+    {
+        string searchText = e.NewTextValue.ToLower();
+        FilterTaskPageTasks(searchText);
+    }
+
+   
+    private void FilterTaskPageTasks(string searchText)
+    {
+        FilteredTasks.Clear();
+
+        var filtered = Tasks.Where(t => t.Title.ToLower().Contains(searchText) ||
+                                        t.Description.ToLower().Contains(searchText)).ToList();
+
+        foreach (var task in filtered)
+        {
+            FilteredTasks.Add(task);
+        }
+    }
+
+   
+    private void OnTaskPageSortOptionChanged(object sender, EventArgs e)
+    {
+        var picker = sender as Picker;
+        string selectedSortOption = picker.SelectedItem.ToString();
+
+        SortTaskPageTasks(selectedSortOption);
+    }
+
+    
+    private void SortTaskPageTasks(string sortOption)
+    {
+        var sortedList = new List<Task>();
+
+        switch (sortOption)
+        {
+            case "Title":
+                sortedList = FilteredTasks.OrderBy(t => t.Title).ToList();
+                break;
+            case "Description":
+                sortedList = FilteredTasks.OrderBy(t => t.Description).ToList();
+                break;
+            case "Priority":
+                sortedList = FilteredTasks.OrderBy(t => t.Priority).ToList();
+                break;
+        }
+
+        FilteredTasks.Clear();
+        foreach (var task in sortedList)
+        {
+            FilteredTasks.Add(task);
+        }
+    }
 }
     

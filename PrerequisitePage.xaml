@@ -55,13 +55,18 @@
                            Text="{Binding Description}"
                            FontAttributes="Italic"
                            VerticalOptions="End" />
+                                
+
                             </Grid>
 
+
                             <Entry IsVisible="{Binding IsEntryVisible}"
-                                     Placeholder="Add details here"
+                                     Placeholder="add deatail"
                                         FontSize="20" 
-                                   WidthRequest="0"
-                                   HeightRequest="200"/>
+                                   WidthRequest="400"
+                                   HeightRequest="100"/>
+
+
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

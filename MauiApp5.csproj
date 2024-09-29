@@ -145,6 +145,9 @@
 	  <MauiXaml Update="NewuserPage1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="NGUserPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="NUDomainPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

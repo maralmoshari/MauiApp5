@@ -28,11 +28,12 @@ namespace MauiApp5
             string ImageSource = "Resources/Images/account.png";
             string Fjobtitle = "manager";
             string Fphonenumber = "0901090827";
+            string Fkodmeli = "0927043187";
 
             // اضافه کردن اعضا به لیست اصلی 
             for (int i = 0; i < MemberCount; i++)
             {
-                var member = new Member(FFname, FLname, FUsername, FDescription, ImageSource, Fjobtitle, Fphonenumber);
+                var member = new Member(FFname, FLname, FUsername, FDescription, ImageSource, Fjobtitle, Fphonenumber , Fkodmeli);
                 Members.Add(member);
             }
 

@@ -3,21 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp5.MemberDetailsPage"
              Title="Member Details">
+    <ScrollView>
 
-    <StackLayout>
+        <StackLayout>
         <Image
             Source="{Binding ImageSource}"
             Aspect="AspectFit" HeightRequest="200" HorizontalOptions="Center"
             Margin="0, 20, 0, 60"/>
-        <Button 
-                 BackgroundColor="#FFCCE5" 
-                 FontSize="50" 
-                 CornerRadius="10" 
-                 WidthRequest="50" 
-                 HeightRequest="50" 
-                 Margin="30, -100, -245, 20" 
-                 Clicked="ProfileButton" 
-                 ImageSource="Resources/Images/account.png"/>
+
         <Frame
              BorderColor="White"
              BackgroundColor="#FFCCE5"
@@ -79,6 +72,6 @@
         </Frame>
     </StackLayout>
 
-
+    </ScrollView>
 
 </ContentPage>

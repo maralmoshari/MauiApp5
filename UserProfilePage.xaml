@@ -30,9 +30,18 @@
 
 
             </Frame>
-
-
             <Frame
+             BorderColor="White"
+             BackgroundColor="#FFCCE5"
+             WidthRequest="350"
+             CornerRadius="20">
+                    <Label Text="{Binding Kodmeli}" FontSize="24" HorizontalOptions="Center" />
+
+
+            </Frame>
+
+
+                <Frame
                  BorderColor="White"
                  BackgroundColor="#FFCCE5"
                  WidthRequest="350"
